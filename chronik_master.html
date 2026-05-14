@@ -596,12 +596,99 @@
         }
 
         /* ── RESPONSIVE ──────────────────────────────────── */
-        @media (max-width: 520px) {
-            .eintrag-datum { display: none; }
-            .header-title h1 { font-size: 1rem; }
-            .stats-row { gap: 16px; }
-            .foto-reihe { flex-direction: column; }
+        @media (max-width: 700px) {
+            .banner-content { gap: 20px; padding: 24px 20px; }
+            .wappen-ff, .wappen-gemeinde { height: 90px; }
+            .ff-banner { min-height: 260px; }
         }
+
+        @media (max-width: 480px) {
+            .banner-content { gap: 12px; padding: 20px 12px; }
+            .wappen-ff, .wappen-gemeinde { height: 68px; }
+            .ff-banner { min-height: 220px; }
+            .page { padding: 0 10px 60px; }
+            .eintrag-kopf { padding: 11px 10px; gap: 8px; }
+            .eintrag-datum { min-width: 52px; font-size: 0.64rem; }
+            .eintrag-titel { font-size: 0.93rem; }
+            .zeitstrahl { padding-left: 26px; }
+            .stats-row { gap: 14px; }
+            .foto-reihe { flex-direction: column; }
+            .year-intro { padding: 14px 14px; }
+            .quartal-badge { font-size: 0.62rem; padding: 4px 10px; }
+            .historisch { padding: 14px 14px; }
+        }
+
+        @media (max-width: 360px) {
+            .wappen-gemeinde { display: none; }
+            .wappen-ff { height: 58px; }
+            .banner-content { gap: 8px; padding: 16px 10px; }
+        }
+
+        /* ── LIGHTBOX ────────────────────────────────────── */
+        #lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.92);
+            z-index: 9999;
+            cursor: zoom-out;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        #lightbox.aktiv { display: flex; }
+
+        .lb-inner {
+            position: relative;
+            max-width: 94vw;
+            max-height: 92vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #lb-img {
+            max-width: 90vw;
+            max-height: 82vh;
+            width: auto;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.8);
+            display: block;
+            cursor: default;
+        }
+
+        .lb-close {
+            position: absolute;
+            top: -18px;
+            right: -18px;
+            background: var(--rot);
+            color: #fff;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            line-height: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        #lb-caption {
+            color: rgba(255,255,255,0.75);
+            font-family: Arial, sans-serif;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 10px;
+            font-style: italic;
+            max-width: 90vw;
+        }
+
+        .eintrag-inhalt img, .foto-reihe img { cursor: zoom-in; }
     </style>
 </head>
 <body>
@@ -1045,9 +1132,396 @@
     <div id="y2023">
         <div class="year-intro">
             <h2>Rückblick 2023</h2>
-            <p style="color:var(--grau-mid); font-family:Arial,sans-serif; font-size:0.9rem;">Inhalte werden noch ergänzt.</p>
+            <div class="stats-row">
+                <div class="stat"><div class="stat-zahl">45</div><div class="stat-label">Aktive Mitglieder</div></div>
+                <div class="stat"><div class="stat-zahl">21</div><div class="stat-label">Atemschutzträger</div></div>
+                <div class="stat"><div class="stat-zahl">12</div><div class="stat-label">Reservisten</div></div>
+                <div class="stat"><div class="stat-zahl">140+</div><div class="stat-label">Schulungsstunden</div></div>
+            </div>
         </div>
-    </div>
+
+        <!-- Q1 -->
+        <div class="quartal-header">
+            <span class="quartal-badge">1. Quartal · Jän – Mär 2023</span>
+            <div class="quartal-linie"></div>
+        </div>
+
+        <div class="zeitstrahl">
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">21. Jän 2023</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Jahreshauptversammlung – Neuer Kommandant</div>
+                        <div class="eintrag-teaser">Ing. Reinhard Scheriau einstimmig zum OBI gewählt · EOBI für Wilhelm Eigner · 3 Angelobungen</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 21. Jänner fand die Jahreshauptversammlung wieder im Gasthaus Nährer in Rassing statt. Da Altkommandant OBI Wilhelm Eigner sein Amt wie intern abgestimmt zur Verfügung gestellt hatte, kam es zur außertourlichen Neuwahl des Kommandanten: Ing. Reinhard Scheriau wurde einstimmig zum neuen Kommandanten der FF-Thalheim gewählt und zum Oberbrandinspektor (OBI) ernannt.</p>
+                        <p>Als seine erste Amtshandlung durfte Scheriau seinen Vorgänger Wilhelm Eigner zum Ehrenoberbrandinspektor (EOBI) ernennen. Im Zuge der JHV wurden außerdem die Jungfeuerwehrmänner Florian Leisser, Elias Rödl und Jakob Wandl feierlich angelobt sowie Lukas Habersatter zum Löschmeister (LM) befördert.</p>
+                        <img src="Bilder/Zeitungen/01_2023/img_001.jpg" alt="Jahreshauptversammlung 2023 – Neuwahl Kommandant">
+                        <p class="bildtext">Jahreshauptversammlung 2023 im Gasthaus Nährer, Rassing</p>
+                        <img src="Bilder/Zeitungen/01_2023/img_002.jpeg" alt="Angelobung der Jungfeuerwehrmänner 2023">
+                        <p class="bildtext">Angelobung: Florian Leisser, Elias Rödl und Jakob Wandl</p>
+                        <img src="Bilder/Zeitungen/01_2023/img_003.jpeg" alt="EOBI-Ernennung Wilhelm Eigner">
+                        <p class="bildtext">Ernennung von Wilhelm Eigner zum Ehrenoberbrandinspektor (EOBI)</p>
+                        <div class="tags">
+                            <span class="tag">Versammlung</span>
+                            <span class="tag">Neuwahl</span>
+                            <span class="tag">Ehrung</span>
+                            <span class="tag">Angelobung</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">Frühjahr 2023</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Übungen & Schulungen Q1</div>
+                        <div class="eintrag-teaser">Atemschutz · Funk · Taktik · zahlreiche Schulungsbesuche</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>In den ersten Monaten des Jahres wurden bereits mehrere Übungen gemäß dem internen Übungsplan abgehalten. Die Schwerpunkte lagen auf dem Funkwesen sowie den Bereichen Atemschutz und taktisches Vorgehen im Einsatzfall. Zahlreiche Kameradinnen und Kameraden besuchten darüber hinaus Schulungen außerhalb der Wehr.</p>
+                        <img src="Bilder/Zeitungen/01_2023/img_004.jpeg" alt="Übung FF Thalheim Frühjahr 2023">
+                        <p class="bildtext">Taktische Übung der FF Thalheim · Frühjahr 2023</p>
+                        <div class="tags">
+                            <span class="tag">Schulung</span>
+                            <span class="tag">Übung</span>
+                            <span class="tag">Atemschutz</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="quartal-header">
+            <span class="quartal-badge">2. Quartal · Apr – Jun 2023</span>
+            <div class="quartal-linie"></div>
+        </div>
+
+        <div class="zeitstrahl">
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">30. Apr 2023</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Maibaum für neuen Kommandanten & 60er EOBI Eigner</div>
+                        <div class="eintrag-teaser">Maibaum am Sportplatz · Mittagessen 1. Mai · Floriani für Wilhelm Eigner</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Zu Ehren des neuen Kommandanten Oberbrandinspektor Ing. Reinhard Scheriau wurde am 30. April ein Maibaum am Sportplatz der FF-Thalheim aufgestellt. Als Dankeschön lud der Kommandant am 1. Mai alle Kameradinnen und Kameraden mit ihren Partnern sowie langjährige Unterstützer der Wehr zu einem gemütlichen Mittagessen ins FF-Haus ein.</p>
+                        <p>Bei diesem Anlass wurde dem Altkommandanten EOBI Wilhelm Eigner zu seinem 60. Geburtstag herzlich gratuliert und ihm als Anerkennung für die jahrelange Tätigkeit ein Floriani überreicht.</p>
+                        <img src="Bilder/Zeitungen/02_2023/img_001.jpg" alt="Maibaum Aufstellung FF Thalheim 2023">
+                        <p class="bildtext">Maibaum für Kommandant Scheriau am Sportplatz · 30. April 2023</p>
+                        <img src="Bilder/Zeitungen/02_2023/img_002.jpeg" alt="Mittagessen im FF-Haus, Ehrung EOBI Eigner">
+                        <p class="bildtext">Ehrung von EOBI Wilhelm Eigner zum 60. Geburtstag</p>
+                        <div class="tags">
+                            <span class="tag">Gemeinschaft</span>
+                            <span class="tag">Tradition</span>
+                            <span class="tag">Ehrung</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">06. Mai 2023</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Florianimesse in Murstetten</div>
+                        <div class="eintrag-teaser">Gemeinsamer Kirchgang mit FF Murstetten · traditionelle Jause im FF-Haus</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am Samstag, den 6. Mai fand in Murstetten die traditionelle Florianimesse statt. Nach einem gemeinsamen Kirchgang der Feuerwehren Murstetten und Thalheim wurden die Kameradinnen und Kameraden beider Feuerwehren zu einer Jause ins FF-Haus Murstetten eingeladen.</p>
+                        <img src="Bilder/Zeitungen/02_2023/img_003.jpeg" alt="Florianimesse in Murstetten 2023">
+                        <p class="bildtext">Florianimesse Murstetten · 6. Mai 2023</p>
+                        <div class="tags">
+                            <span class="tag">Gemeinschaft</span>
+                            <span class="tag">Tradition</span>
+                            <span class="tag">Florianimesse</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">Mai–Jun 2023</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Übungen Q2: Hydrantenüberprüfung & HL-Bahn</div>
+                        <div class="eintrag-teaser">Taktische Übungen · Hydrantenkontrolle · Notausstiege HL-Bahn beprobt</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>In den Wochen nach der Florianimesse wurden gemäß Übungsplan mehrere taktische und technische Übungen durchgeführt. Dabei wurden der Umgang mit Atemschutz und Funk geübt sowie die Hydranten im gesamten Einsatzgebiet auf Funktion überprüft. Zusätzlich wurden die Notausstiege der Hochleistungsbahn (HL-Bahn) in der Zuständigkeit der Wehr beprobt.</p>
+                        <img src="Bilder/Zeitungen/02_2023/img_004.jpeg" alt="Übung HL-Bahn Notausstieg 2023">
+                        <p class="bildtext">Übung an den Notausstiegen der HL-Bahn</p>
+                        <div class="tags">
+                            <span class="tag">Schulung</span>
+                            <span class="tag">Übung</span>
+                            <span class="tag">HL-Bahn</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="quartal-header">
+            <span class="quartal-badge">3. Quartal · Jul – Sep 2023</span>
+            <div class="quartal-linie"></div>
+        </div>
+
+        <div class="zeitstrahl">
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">05. Aug 2023</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Einsatz: B3 Scheunenbrand Pönning</div>
+                        <div class="eintrag-teaser">12:15 Uhr · mitten aus FF-Fest-Vorbereitungen gerissen · 18:00 Uhr Einsatzbereitschaft</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Mitten aus den Vorbereitungen zum alljährlichen FF-Fest wurden die Kameradinnen und Kameraden am 5. August um 12:15 Uhr zu einem B3-Scheunenbrand in Pönning gerufen. Erst um 18:00 Uhr konnte die Wehr wieder ins FF-Haus einrücken und Einsatzbereitschaft melden — ein eindrucksvoller Beweis für die Bedeutung regelmäßiger Übungen und Schulungen.</p>
+                        <img src="Bilder/Zeitungen/03_2023/img_001.jpg" alt="B3 Scheunenbrand Pönning August 2023">
+                        <p class="bildtext">Einsatz B3 Scheunenbrand in Pönning · 5. August 2023</p>
+                        <img src="Bilder/Zeitungen/03_2023/img_002.jpeg" alt="Löscharbeiten beim Scheunenbrand Pönning">
+                        <p class="bildtext">Löscharbeiten beim Scheunenbrand · Pönning 2023</p>
+                        <div class="tags">
+                            <span class="tag">Einsatz</span>
+                            <span class="tag">Brand</span>
+                            <span class="tag">B3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">11.–13. Aug 2023</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">FF-Fest 2023</div>
+                        <div class="eintrag-teaser">Dreitägiges Feuerwehrfest · zahlreiche Gäste · gemeinschaftliches Highlight</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Von 11. bis 13. August durfte die FF Thalheim ihr allseits beliebtes Feuerwehrfest abhalten und dabei wieder zahlreiche Gäste begrüßen. Das dreitägige Fest ist seit Jahren ein fixer Bestandteil des Gemeinschaftslebens in Thalheim.</p>
+                        <img src="Bilder/Zeitungen/03_2023/img_003.jpeg" alt="FF-Fest Thalheim 2023">
+                        <p class="bildtext">FF-Fest Thalheim · 11.–13. August 2023</p>
+                        <img src="Bilder/Zeitungen/03_2023/img_004.jpeg" alt="Stimmung beim FF-Fest Thalheim 2023">
+                        <p class="bildtext">Gemütliche Stimmung beim Feuerwehrfest</p>
+                        <div class="tags">
+                            <span class="tag">Gemeinschaft</span>
+                            <span class="tag">Fest</span>
+                            <span class="tag">Tradition</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">20. Aug 2023</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Einsatz: B3 Dachstuhlbrand Rapoltendorf</div>
+                        <div class="eintrag-teaser">Abendstunden · Unterstützung Nachbarwehren · 23:05 Uhr Einsatzbereitschaft</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am Sonntag, den 20. August wurden die Kameradinnen und Kameraden in den Abendstunden zu einem B3-Dachstuhlbrand nach Rapoltendorf gerufen. In Zusammenarbeit mit den Nachbarwehren konnte der Brand bekämpft werden. Um 23:05 Uhr war die Wehr wieder einsatzbereit.</p>
+                        <img src="Bilder/Zeitungen/03_2023/img_005.jpeg" alt="B3 Dachstuhlbrand Rapoltendorf August 2023">
+                        <p class="bildtext">Einsatz B3 Dachstuhlbrand Rapoltendorf · 20. August 2023</p>
+                        <div class="tags">
+                            <span class="tag">Einsatz</span>
+                            <span class="tag">Brand</span>
+                            <span class="tag">B3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">26. Sep 2023</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Hochzeit Simon &amp; Alina Kaiblinger</div>
+                        <div class="eintrag-teaser">Freudiges Ereignis im Kameradenkreis · herzliche Glückwünsche der Wehr</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 26. September konnte die FF Thalheim die Hochzeit von Kamerad Simon Kaiblinger mit seiner Alina feiern. Die gesamte Wehr gratuliert dem Brautpaar noch einmal sehr herzlich und wünscht den beiden Gesundheit und viele schöne gemeinsame Jahre.</p>
+                        <img src="Bilder/Zeitungen/03_2023/img_006.jpeg" alt="Hochzeit Simon und Alina Kaiblinger 2023">
+                        <p class="bildtext">Hochzeit Simon &amp; Alina Kaiblinger · 26. September 2023</p>
+                        <div class="tags">
+                            <span class="tag">Gemeinschaft</span>
+                            <span class="tag">Feier</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="quartal-header">
+            <span class="quartal-badge">4. Quartal · Okt – Dez 2023</span>
+            <div class="quartal-linie"></div>
+        </div>
+
+        <div class="zeitstrahl">
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">30. Sep 2023</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Einsatz: Fahrzeugbergung Wiesen</div>
+                        <div class="eintrag-teaser">08:27 Uhr · Traktor umgestürzt · Güllefass getrennt · Kranunterstützung</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Um 08:27 Uhr wurden wir zu einer Bergung eines landwirtschaftlichen Fahrzeugs nach Wiesen gerufen. Das Güllefass wurde von dem umgestürzten Traktor getrennt und von der Unfallstelle abtransportiert. Anschließend wurde der Traktor mithilfe eines zur Unterstützung gerufenen Krans aufgestellt und abtransportiert. Glücklicherweise wurde bei diesem Einsatz niemand verletzt.</p>
+                        <img src="Bilder/Zeitungen/04_2023/img_001.jpeg" alt="Fahrzeugbergung Traktor Wiesen September 2023">
+                        <p class="bildtext">Fahrzeugbergung in Wiesen · 30. September 2023</p>
+                        <div class="tags">
+                            <span class="tag">Einsatz</span>
+                            <span class="tag">Bergung</span>
+                            <span class="tag">Technisch</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">06. Okt 2023</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Einsatz: Verkehrsunfall Thalheim</div>
+                        <div class="eintrag-teaser">21:00 Uhr · eingeklemmte Person · Kamerad der FF Thalheim verstorben</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 6. Oktober wurden wir um 21:00 Uhr zu einem Verkehrsunfall in Thalheim mit einer eingeklemmten Person gerufen. Beim Eintreffen am Einsatzort mussten wir feststellen, dass es sich bei der verunfallten Person um einen unserer Kameraden handelte. Trotz sofort eingeleiteter Wiederbelebungsmaßnahmen konnte unser Kamerad nicht mehr gerettet werden und verstarb noch an der Einsatzstelle.</p>
+                        <p>Wir gedenken unserem Kameraden in Würde und Dankbarkeit für seinen langjährigen Dienst an der Gemeinschaft.</p>
+                        <div class="tags">
+                            <span class="tag">Einsatz</span>
+                            <span class="tag">Verkehrsunfall</span>
+                            <span class="tag">Gedenken</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">11. Okt 2023</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Einsatz: BMA Schloss Thalheim</div>
+                        <div class="eintrag-teaser">20:56 Uhr · Fehlalarm · Saunatür hat BMA ausgelöst</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Um 20:56 Uhr wurde die Wehr zu einem Brandalarm ins Schloss Thalheim gerufen. Nach dem Auslesen der Brandmeldeanlage (BMA) und der Kontrolle des entsprechenden Brandmelders konnte festgestellt werden, dass kein Brand vorlag — der Melder war durch eine offene Saunatür ausgelöst worden. Fehlalarm.</p>
+                        <div class="tags">
+                            <span class="tag">Einsatz</span>
+                            <span class="tag">BMA</span>
+                            <span class="tag">Fehlalarm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">Herbst 2023</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Übungen Q4: Unterabschnittsübungen &amp; HL-Bahn</div>
+                        <div class="eintrag-teaser">UA-Atemschutzübung Perschling · UA-Übung Rassing · interne Übungen</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Im Herbst standen wieder mehrere Übungen am Plan. Die Kameradinnen und Kameraden nahmen an der Unterabschnittsatemschutzübung in Perschling und an der Unterabschnittsübung in Rassing teil. Darüber hinaus wurden auch mehrere interne Übungen abgehalten, darunter die Beprobung der Gerätschaften an den Notausstiegen der HL-Bahn.</p>
+                        <img src="Bilder/Zeitungen/04_2023/img_002.jpeg" alt="Unterabschnittsübung Herbst 2023">
+                        <p class="bildtext">Unterabschnittsübung · Herbst 2023</p>
+                        <div class="tags">
+                            <span class="tag">Schulung</span>
+                            <span class="tag">Übung</span>
+                            <span class="tag">HL-Bahn</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">03. Dez 2023</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Einsatz: PKW aus Schneeverwehung befreit</div>
+                        <div class="eintrag-teaser">06:38 Uhr · Heftiger Schneefall · Lenkerin bei Pönning befreit</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 3. Dezember wurden wir um 06:38 Uhr zu einem technischen Einsatz gerufen. Aufgrund heftigen Schneefalls und anschließender Verwehungen war eine Lenkerin mit ihrem PKW in der Nähe von Pönning in eine Notsituation geraten und musste aus dieser befreit werden.</p>
+                        <div class="tags">
+                            <span class="tag">Einsatz</span>
+                            <span class="tag">Technisch</span>
+                            <span class="tag">Winter</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">24. Dez 2023</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Einsatz: Telefonkabel bei Sturmböen</div>
+                        <div class="eintrag-teaser">05:20 Uhr · Heiliger Abend · Kabel provisorisch am Mast befestigt</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Fast schon traditionell nach dem Einsatz am Heiligen Abend 2022 wurden die Kameraden auch am 24. Dezember 2023 wieder gerufen — diesmal zu einem technischen Einsatz. In den frühen Morgenstunden um 05:20 Uhr musste in Thalheim aufgrund heftiger Sturmböen ein auf die Fahrbahn gefallenes Telefonkabel entfernt und provisorisch am Mast befestigt werden.</p>
+                        <div class="tags">
+                            <span class="tag">Einsatz</span>
+                            <span class="tag">Technisch</span>
+                            <span class="tag">Winter</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /y2023 -->
 
     <!-- ── JAHR 2024 ──────────────────────────────────────── -->
     <div id="y2024">
@@ -1081,6 +1555,15 @@
     Vereinschronik &nbsp;·&nbsp; Erstellt 2025
 </footer>
 
+<!-- ══ LIGHTBOX ════════════════════════════════════════════ -->
+<div id="lightbox" onclick="closeLightbox()">
+    <div class="lb-inner" onclick="event.stopPropagation()">
+        <button class="lb-close" onclick="closeLightbox()">&#215;</button>
+        <img id="lb-img" src="" alt="">
+        <div id="lb-caption"></div>
+    </div>
+</div>
+
 <script>
     function aufklappen(kopf) {
         const eintrag = kopf.parentElement;
@@ -1108,6 +1591,31 @@
                 a.classList.remove('active');
             });
             this.classList.add('active');
+        });
+    });
+
+    // Lightbox
+    function openLightbox(src, caption) {
+        document.getElementById('lb-img').src = src;
+        document.getElementById('lb-caption').textContent = caption || '';
+        document.getElementById('lightbox').classList.add('aktiv');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').classList.remove('aktiv');
+        document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Alle Bilder in Einträgen und historischem Abschnitt anklickbar machen
+    document.querySelectorAll('.eintrag-inhalt img, .foto-reihe img').forEach(function(img) {
+        img.addEventListener('click', function() {
+            const caption = this.alt || (this.nextElementSibling && this.nextElementSibling.textContent) || '';
+            openLightbox(this.src, caption);
         });
     });
 </script>
