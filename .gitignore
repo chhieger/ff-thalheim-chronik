@@ -1,0 +1,12 @@
+Zeitungen/
+*.py
+*.docx
+inhalte.txt
+bilder_index.json
+chronik_v*.html
+chronik.html
+chronik_variante_b.html
+banner_hero*.html
+build_chronik.py
+.claude/
+Screenshot*.png

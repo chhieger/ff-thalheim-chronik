@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FF Thalheim – Chronik (Variante A · Klassisch)</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --rot:        #CC0000;
+            --rot-dunkel: #990000;
+            --grau-hell:  #F4F4F4;
+            --grau-mid:   #999999;
+            --text:       #1A1A1A;
+            --weiss:      #FFFFFF;
+            --rand:       #DDDDDD;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            color: var(--text);
+            background: #EFEFEF;
+            font-size: 16px;
+            line-height: 1.65;
+        }
+
+        /* ── HERO BANNER ────────────────────────────────── */
+        .ff-banner {
+            position: relative;
+            width: 100%;
+            min-height: 340px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background:
+                radial-gradient(ellipse  4% 62% at  4%  105%, rgba(255,250,160,1.0) 0%, rgba(255,140,0,0.55) 35%, transparent 65%),
+                radial-gradient(ellipse  6% 88% at 12%  105%, rgba(255,240,120,0.95) 0%, rgba(255,90,0,0.65) 28%, transparent 58%),
+                radial-gradient(ellipse  4% 52% at 19%  105%, rgba(255,230,100,0.85) 0%, rgba(255,80,0,0.5) 32%, transparent 62%),
+                radial-gradient(ellipse  7% 78% at 27%  105%, rgba(255,255,180,1.0) 0%, rgba(255,120,0,0.7) 25%, transparent 55%),
+                radial-gradient(ellipse  5% 66% at 35%  105%, rgba(255,235,130,0.9) 0%, rgba(255,100,0,0.6) 30%, transparent 60%),
+                radial-gradient(ellipse  6% 95% at 43%  105%, rgba(255,248,170,1.0) 0%, rgba(255,110,0,0.7) 22%, transparent 52%),
+                radial-gradient(ellipse  4% 58% at 50%  105%, rgba(255,220,90,0.85) 0%, rgba(255,75,0,0.55) 30%, transparent 60%),
+                radial-gradient(ellipse  7% 84% at 58%  105%, rgba(255,250,160,0.95) 0%, rgba(255,100,0,0.65) 26%, transparent 56%),
+                radial-gradient(ellipse  5% 70% at 66%  105%, rgba(255,240,140,0.9) 0%, rgba(255,90,0,0.6) 29%, transparent 59%),
+                radial-gradient(ellipse  6% 60% at 74%  105%, rgba(255,230,110,0.85) 0%, rgba(255,80,0,0.55) 32%, transparent 62%),
+                radial-gradient(ellipse  4% 90% at 82%  105%, rgba(255,255,190,1.0) 0%, rgba(255,120,0,0.7) 24%, transparent 54%),
+                radial-gradient(ellipse  6% 68% at 90%  105%, rgba(255,240,130,0.9) 0%, rgba(255,95,0,0.6) 30%, transparent 60%),
+                radial-gradient(ellipse  4% 55% at 97%  105%, rgba(255,225,100,0.85) 0%, rgba(255,80,0,0.5) 33%, transparent 63%),
+                radial-gradient(ellipse 90% 65% at 50% 110%, rgba(230,80,0,0.9) 0%, rgba(160,35,0,0.6) 45%, transparent 70%),
+                radial-gradient(ellipse 50% 45% at 25%  80%, rgba(200,55,0,0.45) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 45% at 75%  80%, rgba(190,50,0,0.40) 0%, transparent 60%),
+                linear-gradient(180deg, #030000 0%, #0d0100 8%, #1c0400 18%, #370a00 28%, #661500 38%, #9e2500 48%, #c24000 57%, #d95800 65%, #cc4a00 73%, #7e2000 82%, #2e0700 91%, #0a0100 100%);
+        }
+
+        .ff-banner::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 50%;
+            background: radial-gradient(ellipse at 50% 100%, rgba(255,120,0,0.50) 0%, rgba(200,55,0,0.25) 40%, transparent 70%);
+            animation: glow-pulse 2.8s ease-in-out infinite alternate;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .ff-banner::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 45%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes glow-pulse {
+            from { opacity: 0.65; transform: scaleY(1);    }
+            to   { opacity: 1.00; transform: scaleY(1.10); }
+        }
+
+        .flame-anim {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 70%;
+            pointer-events: none;
+            z-index: 2;
+            animation: flicker-shift 4s ease-in-out infinite alternate;
+            background:
+                radial-gradient(ellipse 5% 55% at 16% 100%, rgba(255,230,60,0.6)  0%, transparent 55%),
+                radial-gradient(ellipse 5% 70% at 36% 100%, rgba(255,210,40,0.55) 0%, transparent 52%),
+                radial-gradient(ellipse 5% 50% at 55% 100%, rgba(255,240,80,0.6)  0%, transparent 55%),
+                radial-gradient(ellipse 5% 65% at 72% 100%, rgba(255,220,50,0.55) 0%, transparent 52%),
+                radial-gradient(ellipse 5% 48% at 88% 100%, rgba(255,230,60,0.5)  0%, transparent 55%);
+        }
+
+        @keyframes flicker-shift {
+            0%   { opacity: 0.7;  transform: scaleX(1)    scaleY(1);    }
+            25%  { opacity: 1.0;  transform: scaleX(1.02) scaleY(1.05); }
+            50%  { opacity: 0.8;  transform: scaleX(0.98) scaleY(0.95); }
+            75%  { opacity: 1.0;  transform: scaleX(1.01) scaleY(1.08); }
+            100% { opacity: 0.75; transform: scaleX(1)    scaleY(1.02); }
+        }
+
+        .embers {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 3;
+        }
+
+        .ember {
+            position: absolute;
+            bottom: -8px;
+            width: 4px; height: 4px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #fff8c0 0%, #ff6500 55%, transparent 100%);
+            box-shadow: 0 0 5px 2px rgba(255,130,0,0.85);
+            animation: rise linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes rise {
+            0%   { transform: translateY(0)      translateX(0)                     scale(1.0); opacity: 0;   }
+            8%   { opacity: 1; }
+            55%  { transform: translateY(-160px) translateX(var(--drift))           scale(0.85); opacity: 0.8; }
+            100% { transform: translateY(-340px) translateX(calc(var(--drift)*1.6)) scale(0.2);  opacity: 0;  }
+        }
+
+        .ember:nth-child(1)  { left:  4%; --drift:  16px; animation-duration: 4.2s; animation-delay: 0.0s; }
+        .ember:nth-child(2)  { left: 11%; --drift: -14px; animation-duration: 3.8s; animation-delay: 0.7s; }
+        .ember:nth-child(3)  { left: 18%; --drift:  20px; animation-duration: 5.1s; animation-delay: 1.3s; }
+        .ember:nth-child(4)  { left: 26%; --drift:  -9px; animation-duration: 3.4s; animation-delay: 0.4s; }
+        .ember:nth-child(5)  { left: 33%; --drift:  18px; animation-duration: 4.6s; animation-delay: 1.9s; }
+        .ember:nth-child(6)  { left: 41%; --drift: -22px; animation-duration: 4.0s; animation-delay: 1.0s; }
+        .ember:nth-child(7)  { left: 49%; --drift:  12px; animation-duration: 4.9s; animation-delay: 2.2s; }
+        .ember:nth-child(8)  { left: 57%; --drift: -17px; animation-duration: 3.6s; animation-delay: 0.5s; }
+        .ember:nth-child(9)  { left: 64%; --drift:  25px; animation-duration: 4.3s; animation-delay: 1.6s; }
+        .ember:nth-child(10) { left: 72%; --drift:  -7px; animation-duration: 3.9s; animation-delay: 0.8s; }
+        .ember:nth-child(11) { left: 79%; --drift:  16px; animation-duration: 5.3s; animation-delay: 2.5s; }
+        .ember:nth-child(12) { left: 86%; --drift: -19px; animation-duration: 4.1s; animation-delay: 1.2s; }
+        .ember:nth-child(13) { left: 93%; --drift:  11px; animation-duration: 3.7s; animation-delay: 0.3s; }
+        .ember:nth-child(14) { left: 22%; --drift:  22px; animation-duration: 5.6s; animation-delay: 0.6s; width: 7px; height: 7px; }
+        .ember:nth-child(15) { left: 58%; --drift: -24px; animation-duration: 5.9s; animation-delay: 2.0s; width: 7px; height: 7px; }
+        .ember:nth-child(16) { left: 76%; --drift:  14px; animation-duration: 4.7s; animation-delay: 3.1s; width: 5px; height: 5px; }
+        .ember:nth-child(17) { left: 45%; --drift: -10px; animation-duration: 6.1s; animation-delay: 1.4s; width: 6px; height: 6px; }
+
+        .banner-stripe-top, .banner-stripe-bottom {
+            position: absolute;
+            left: 0; right: 0; height: 6px;
+            z-index: 10;
+        }
+
+        .banner-stripe-top {
+            top: 0;
+            background: linear-gradient(90deg, #aa0000 0%, #dd2000 20%, #ff5000 40%, #ff8800 50%, #ff5000 60%, #dd2000 80%, #aa0000 100%);
+            box-shadow: 0 0 14px rgba(255,80,0,0.8), 0 2px 6px rgba(0,0,0,0.5);
+        }
+
+        .banner-stripe-bottom {
+            bottom: 0; height: 5px;
+            background: linear-gradient(90deg, #880000 0%, #bb0000 20%, #ee2800 50%, #bb0000 80%, #880000 100%);
+            box-shadow: 0 -2px 10px rgba(180,0,0,0.6);
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 44px;
+            padding: 32px 60px;
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        .wappen-ff,
+        .wappen-gemeinde {
+            height: 125px;
+            width: auto;
+            flex-shrink: 0;
+            filter: drop-shadow(0 0 16px rgba(255,130,0,0.85))
+                    drop-shadow(0 0 36px rgba(255,60,0,0.55))
+                    drop-shadow(0 5px 22px rgba(0,0,0,0.9));
+        }
+
+        .wappen-ff { animation: wappen-glow 3s ease-in-out infinite alternate; }
+
+        @keyframes wappen-glow {
+            from { filter: drop-shadow(0 0 12px rgba(255,120,0,0.8)) drop-shadow(0 0 28px rgba(255,50,0,0.5)) drop-shadow(0 5px 22px rgba(0,0,0,0.9)); }
+            to   { filter: drop-shadow(0 0 26px rgba(255,180,0,1.0)) drop-shadow(0 0 55px rgba(255,80,0,0.85)) drop-shadow(0 5px 22px rgba(0,0,0,0.9)); }
+        }
+
+        .title-block { text-align: center; flex: 1; }
+
+        .title-sub {
+            display: block;
+            font-family: Arial, sans-serif;
+            font-size: 1.0rem;
+            font-weight: 600;
+            letter-spacing: 0.38em;
+            color: rgba(255,200,110,0.88);
+            text-transform: uppercase;
+            text-shadow: 0 0 14px rgba(255,100,0,0.85);
+            margin-bottom: 2px;
+        }
+
+        .title-main {
+            display: block;
+            font-family: 'Arial Black', Impact, Arial, sans-serif;
+            font-size: clamp(2.5rem, 5.5vw, 4.4rem);
+            font-weight: 900;
+            letter-spacing: 0.07em;
+            color: #fff;
+            text-transform: uppercase;
+            text-shadow: 0 0 22px rgba(255,130,0,0.95), 0 0 50px rgba(255,60,0,0.65), 3px 3px 0 rgba(0,0,0,0.85), 0 5px 26px rgba(0,0,0,0.95);
+            line-height: 1.0;
+            animation: title-flicker 9s ease-in-out infinite;
+        }
+
+        .title-org {
+            display: block;
+            font-family: 'Arial Black', Impact, Arial, sans-serif;
+            font-size: clamp(3.4rem, 7.8vw, 6.0rem);
+            font-weight: 900;
+            letter-spacing: 0.11em;
+            color: #fff;
+            text-transform: uppercase;
+            text-shadow: 0 0 32px rgba(255,160,0,1.0), 0 0 65px rgba(255,80,0,0.75), 4px 4px 0 rgba(0,0,0,0.9), 0 6px 32px rgba(0,0,0,0.98);
+            line-height: 1.0;
+            animation: title-flicker 9s ease-in-out infinite;
+            animation-delay: 0.4s;
+        }
+
+        @keyframes title-flicker {
+            0%, 91%, 95%, 100% { opacity: 1;   }
+            92%                { opacity: 0.90; }
+            93%                { opacity: 0.97; }
+            94%                { opacity: 0.88; }
+        }
+
+        .banner-claim {
+            position: relative;
+            z-index: 5;
+            width: 100%;
+            padding: 9px 0 13px;
+            text-align: center;
+            font-family: Georgia, serif;
+            font-size: 1.0rem;
+            font-style: italic;
+            letter-spacing: 0.12em;
+            color: rgba(255,205,130,0.90);
+            text-shadow: 0 0 12px rgba(255,110,0,0.7), 0 2px 8px rgba(0,0,0,0.95);
+            border-top: 1px solid rgba(255,120,0,0.28);
+        }
+
+        /* ── JAHRES-NAVIGATION ───────────────────────────── */
+        .year-nav {
+            background: var(--rot-dunkel);
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .year-nav::-webkit-scrollbar { display: none; }
+
+        .year-nav-inner {
+            max-width: 860px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .year-nav a {
+            display: block;
+            padding: 10px 22px;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.6);
+            border-bottom: 3px solid transparent;
+            white-space: nowrap;
+            transition: color .2s, border-color .2s;
+        }
+
+        .year-nav a.active,
+        .year-nav a:hover {
+            color: var(--weiss);
+            border-bottom-color: var(--weiss);
+        }
+
+        /* ── SEITEN-LAYOUT ───────────────────────────────── */
+        .page {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
+        }
+
+        /* ── JAHRES-INTRO ────────────────────────────────── */
+        .year-intro {
+            background: var(--weiss);
+            border-left: 4px solid var(--rot);
+            padding: 20px 24px;
+            margin: 32px 0 40px;
+            border-radius: 0 4px 4px 0;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+        }
+
+        .year-intro h2 {
+            font-size: 1.4rem;
+            color: var(--rot);
+            margin-bottom: 12px;
+        }
+
+        .stats-row {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            font-family: Arial, sans-serif;
+        }
+
+        .stat-zahl {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--rot);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.72rem;
+            color: var(--grau-mid);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 2px;
+        }
+
+        /* ── QUARTAL-TRENNER ─────────────────────────────── */
+        .quartal-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 40px 0 20px;
+        }
+
+        .quartal-badge {
+            background: var(--rot);
+            color: var(--weiss);
+            font-family: Arial, sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 2px;
+            white-space: nowrap;
+        }
+
+        .quartal-linie {
+            flex: 1;
+            height: 1px;
+            background: var(--rand);
+        }
+
+        /* ── ZEITSTRAHL ──────────────────────────────────── */
+        .zeitstrahl {
+            position: relative;
+            padding-left: 36px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        /* vertikale Linie */
+        .zeitstrahl::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 16px;
+            bottom: 16px;
+            width: 2px;
+            background: var(--rand);
+        }
+
+        /* ── EINTRAG ─────────────────────────────────────── */
+        .eintrag {
+            position: relative;
+            background: var(--weiss);
+            border-radius: 4px;
+            border-left: 3px solid transparent;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            transition: border-color .2s, box-shadow .2s;
+        }
+
+        .eintrag:hover {
+            border-left-color: var(--rot);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        }
+
+        .eintrag.offen {
+            border-left-color: var(--rot);
+        }
+
+        /* Zeitstrahl-Punkt */
+        .eintrag::before {
+            content: '';
+            position: absolute;
+            left: -32px;
+            top: 16px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--weiss);
+            border: 2px solid var(--rand);
+            transition: border-color .2s, background .2s;
+        }
+
+        .eintrag:hover::before,
+        .eintrag.offen::before {
+            border-color: var(--rot);
+            background: var(--rot);
+        }
+
+        /* ── EINTRAG-KOPF (klickbar) ─────────────────────── */
+        .eintrag-kopf {
+            padding: 14px 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            user-select: none;
+        }
+
+        .eintrag-datum {
+            font-family: Arial, sans-serif;
+            font-size: 0.72rem;
+            color: var(--grau-mid);
+            white-space: nowrap;
+            padding-top: 3px;
+            min-width: 72px;
+        }
+
+        .eintrag-mitte {
+            flex: 1;
+        }
+
+        .eintrag-titel {
+            font-size: 1rem;
+            font-weight: bold;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .eintrag-teaser {
+            font-family: Arial, sans-serif;
+            font-size: 0.8rem;
+            color: var(--grau-mid);
+            margin-top: 3px;
+        }
+
+        .eintrag-toggle {
+            font-family: Arial, sans-serif;
+            font-size: 0.75rem;
+            color: var(--rot);
+            white-space: nowrap;
+            padding-top: 4px;
+            transition: transform .3s;
+        }
+
+        .eintrag.offen .eintrag-toggle {
+            transform: rotate(180deg);
+        }
+
+        /* ── EINTRAG-BODY (ausklappbar) ──────────────────── */
+        .eintrag-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .4s ease;
+        }
+
+        .eintrag.offen .eintrag-body {
+            max-height: 2400px;
+        }
+
+        .eintrag-inhalt {
+            padding: 4px 16px 18px;
+            border-top: 1px solid #EEEEEE;
+        }
+
+        .eintrag-inhalt p {
+            font-size: 0.93rem;
+            line-height: 1.75;
+            margin-top: 12px;
+            color: #333;
+        }
+
+        .eintrag-inhalt img {
+            width: 100%;
+            border-radius: 4px;
+            margin-top: 16px;
+            display: block;
+        }
+
+        .eintrag-inhalt .bildtext {
+            font-family: Arial, sans-serif;
+            font-size: 0.76rem;
+            color: var(--grau-mid);
+            text-align: center;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        /* Tags */
+        .tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-top: 14px;
+        }
+
+        .tag {
+            font-family: Arial, sans-serif;
+            font-size: 0.67rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            background: #F0E0E0;
+            color: var(--rot-dunkel);
+            padding: 3px 9px;
+            border-radius: 2px;
+        }
+
+        /* ── HISTORISCHER ABSCHNITT ──────────────────────── */
+        .historisch {
+            background: var(--grau-hell);
+            border: 1px solid var(--rand);
+            border-radius: 4px;
+            padding: 20px 24px;
+            margin-top: 48px;
+        }
+
+        .historisch h3 {
+            font-size: 1rem;
+            color: var(--rot);
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--rand);
+            padding-bottom: 8px;
+        }
+
+        .foto-reihe {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .foto-reihe figure {
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .foto-reihe img {
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid var(--rand);
+            display: block;
+        }
+
+        .foto-reihe figcaption {
+            font-family: Arial, sans-serif;
+            font-size: 0.72rem;
+            color: var(--grau-mid);
+            text-align: center;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        /* ── FOOTER ──────────────────────────────────────── */
+        footer {
+            background: var(--rot-dunkel);
+            color: rgba(255,255,255,0.65);
+            text-align: center;
+            padding: 28px 24px;
+            font-family: Arial, sans-serif;
+            font-size: 0.78rem;
+        }
+
+        footer strong {
+            color: var(--weiss);
+        }
+
+        /* ── RESPONSIVE ──────────────────────────────────── */
+        @media (max-width: 520px) {
+            .eintrag-datum { display: none; }
+            .header-title h1 { font-size: 1rem; }
+            .stats-row { gap: 16px; }
+            .foto-reihe { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ══ HERO BANNER ══════════════════════════════════════════ -->
+<div class="ff-banner">
+    <div class="flame-anim"></div>
+    <div class="embers">
+        <div class="ember"></div><div class="ember"></div><div class="ember"></div>
+        <div class="ember"></div><div class="ember"></div><div class="ember"></div>
+        <div class="ember"></div><div class="ember"></div><div class="ember"></div>
+        <div class="ember"></div><div class="ember"></div><div class="ember"></div>
+        <div class="ember"></div><div class="ember"></div><div class="ember"></div>
+        <div class="ember"></div><div class="ember"></div>
+    </div>
+    <div class="banner-stripe-top"></div>
+    <div class="banner-content">
+        <img src="Bilder/Logo Feuerwehrwappen.png" class="wappen-ff" alt="Wappen FF Thalheim">
+        <div class="title-block">
+            <span class="title-sub">Freiwillige</span>
+            <span class="title-main">Feuerwehr</span>
+            <span class="title-org">Thalheim</span>
+        </div>
+        <img src="Bilder/Kapelln Wappen.png" class="wappen-gemeinde" alt="Wappen Gemeinde Kapelln">
+    </div>
+    <div class="banner-claim">Seit 1883 – Unsere Geschichte und Gemeinschaft</div>
+    <div class="banner-stripe-bottom"></div>
+</div>
+
+<!-- ══ NAVIGATION ══════════════════════════════════════════ -->
+<nav class="year-nav">
+    <div class="year-nav-inner">
+        <a href="#y2021" class="active">2021</a>
+        <a href="#y2022">2022</a>
+        <a href="#y2023">2023</a>
+        <a href="#y2024">2024</a>
+        <a href="#y2025">2025</a>
+        <a href="#y2026">2026</a>
+    </div>
+</nav>
+
+<!-- ══ INHALT ═══════════════════════════════════════════════ -->
+<div class="page">
+
+    <!-- ── JAHR 2021 ──────────────────────────────────────── -->
+    <div id="y2021">
+        <div class="year-intro">
+            <h2>Rückblick 2021</h2>
+            <div class="stats-row">
+                <div class="stat">
+                    <div class="stat-zahl">38</div>
+                    <div class="stat-label">Aktive Mitglieder</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-zahl">24</div>
+                    <div class="stat-label">Übungen</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-zahl">11</div>
+                    <div class="stat-label">Einsätze</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-zahl">3</div>
+                    <div class="stat-label">Beförderungen</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q1 -->
+        <div class="quartal-header">
+            <span class="quartal-badge">1. Quartal · Jän – Mär 2021</span>
+            <div class="quartal-linie"></div>
+        </div>
+
+        <div class="zeitstrahl">
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">22. Jän 2021</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Jahreshauptversammlung mit Neuwahlen</div>
+                        <div class="eintrag-teaser">Kommandant Eigner bestätigt · Beförderungen · Neuwahl des Vorstands</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 22. Jänner 2021 fand die Jahreshauptversammlung der Freiwilligen Feuerwehr Thalheim statt. Im Mittelpunkt standen die Neuwahlen des Kommandos und des Vorstands.</p>
+                        <p>Kommandant Wilhelm Eigner wurde in seinem Amt bestätigt. Mehrere Kameradinnen und Kameraden wurden für ihre langjährigen Verdienste befördert und geehrt.</p>
+                        <img src="Bilder/Zeitungen/01_2021/img_002.jpeg" alt="Jahreshauptversammlung 2021 – befördertes Kommando">
+                        <p class="bildtext">Beförderungen bei der Jahreshauptversammlung 2021</p>
+                        <div class="tags">
+                            <span class="tag">Versammlung</span>
+                            <span class="tag">Neuwahl</span>
+                            <span class="tag">Ehrung</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="quartal-header">
+            <span class="quartal-badge">2. Quartal · Apr – Jun 2021</span>
+            <div class="quartal-linie"></div>
+        </div>
+
+        <div class="zeitstrahl">
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">April 2021</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Grundausbildung erfolgreich abgeschlossen</div>
+                        <div class="eintrag-teaser">Trotz Corona-Maßnahmen alle Kurse planmäßig durchgeführt</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Die Grundausbildung für neue Mitglieder wurde im April 2021 erfolgreich abgeschlossen. Trotz der weiterhin gültigen COVID-19-Maßnahmen konnten alle Kurse und Übungen planmäßig durchgeführt werden.</p>
+                        <p>Der gesamte Schulungsplan wurde unter strikter Einhaltung der Hygienemaßnahmen absolviert — ein Beweis für die Disziplin und den Einsatz aller Beteiligten.</p>
+                        <div class="tags">
+                            <span class="tag">Ausbildung</span>
+                            <span class="tag">Übung</span>
+                            <span class="tag">COVID</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">01. Mai 2021</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Maibaum aufstellen</div>
+                        <div class="eintrag-teaser">Traditionsbrauch der Gemeinde Thalheim</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Die Feuerwehr Thalheim war auch 2021 beim traditionellen Maibaumaufstellen dabei und unterstützte die Gemeinde bei diesem wichtigen Brauch.</p>
+                        <img src="Bilder/Zeitungen/02_2021/img_002.jpeg" alt="Maibaum aufstellen 2021">
+                        <p class="bildtext">Maibaum aufstellen in Thalheim · 1. Mai 2021</p>
+                        <div class="tags">
+                            <span class="tag">Gemeinschaft</span>
+                            <span class="tag">Tradition</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="quartal-header">
+            <span class="quartal-badge">3. Quartal · Jul – Sep 2021</span>
+            <div class="quartal-linie"></div>
+        </div>
+
+        <div class="zeitstrahl">
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">05. Jul 2021</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Winterschulung &amp; Rettungshunde-Vortrag</div>
+                        <div class="eintrag-teaser">Kooperation mit Rettungshunde Niederösterreich · praktische Demonstration</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 5. Juli fand die Unterabschnitts-Winterschulung statt. Ein besonderes Highlight war der Vortrag der Rettungshunde Niederösterreich mit anschließender praktischer Demonstration.</p>
+                        <p>Die Zusammenarbeit mit dem Rettungshunde-Team zeigte wertvolle Möglichkeiten für zukünftige gemeinsame Einsätze auf.</p>
+                        <img src="Bilder/Zeitungen/03_2021/img_008.png" alt="Rettungshunde-Vortrag im Schulungsraum">
+                        <p class="bildtext">Vortrag der Rettungshunde Niederösterreich im Schulungsraum</p>
+                        <img src="Bilder/Zeitungen/03_2021/img_007.png" alt="Rettungshunde-Demonstration im Freien">
+                        <p class="bildtext">Praktische Demonstration mit Rettungshund · Juli 2021</p>
+                        <div class="tags">
+                            <span class="tag">Schulung</span>
+                            <span class="tag">Kooperation</span>
+                            <span class="tag">Rettungshunde</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">Sommer 2021</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Leistungsabzeichen & Ehrungen</div>
+                        <div class="eintrag-teaser">Verleihung des Feuerwehr-Leistungsabzeichens · Beförderungen</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Im Sommer 2021 fand die Verleihung des Feuerwehr-Leistungsabzeichens statt. Mehrere Kameradinnen und Kameraden wurden für ihre bestandenen Prüfungen und langjährigen Verdienste ausgezeichnet.</p>
+                        <img src="Bilder/Zeitungen/03_2021/img_001.png" alt="Leistungsabzeichen-Verleihung 2021">
+                        <p class="bildtext">Ehrung und Leistungsabzeichen-Verleihung · Sommer 2021</p>
+                        <div class="tags">
+                            <span class="tag">Ehrung</span>
+                            <span class="tag">Leistungsabzeichen</span>
+                            <span class="tag">Beförderung</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="quartal-header">
+            <span class="quartal-badge">4. Quartal · Okt – Dez 2021</span>
+            <div class="quartal-linie"></div>
+        </div>
+
+        <div class="zeitstrahl">
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">09. Okt 2021</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Tunnelübung (Nacht)</div>
+                        <div class="eintrag-teaser">Anspruchsvolle Nachtübung mit Funktionalitätsprüfung aller Einsatzgeräte</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>In den Nachtstunden des 9. Oktober wurde eine intensive Tunnelübung abgehalten. Alle Einsatzgeräte wurden dabei einer vollständigen Funktionalitätsprüfung unterzogen.</p>
+                        <p>Die Übung forderte die Kameradinnen und Kameraden in einer realistischen Einsatzsimulation unter schwierigen Sichtbedingungen — eine wertvolle Erfahrung für den Ernstfall.</p>
+                        <img src="Bilder/Zeitungen/04_2021/img_001.png" alt="Tunnelübung – Blick in den Tunnel">
+                        <p class="bildtext">Tunnelübung · Oktober 2021</p>
+                        <img src="Bilder/Zeitungen/04_2021/img_002.png" alt="Tunnelübung – Innenansicht">
+                        <p class="bildtext">Innenansicht während der Übung</p>
+                        <div class="tags">
+                            <span class="tag">Übung</span>
+                            <span class="tag">Ausbildung</span>
+                            <span class="tag">Nacht</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">12. Nov 2021</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Einsatz: Tierrettung Hornissennest</div>
+                        <div class="eintrag-teaser">Sicheres Entfernen eines Hornissennestes</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 12. November wurde die FF Thalheim zu einem Tierrettungseinsatz alarmiert. Ein Hornissennest musste fachgerecht und sicher entfernt werden.</p>
+                        <img src="Bilder/Zeitungen/04_2021/img_003.jpeg" alt="Hornissennest am Dachboden">
+                        <p class="bildtext">Das entfernte Hornissennest · November 2021</p>
+                        <div class="tags">
+                            <span class="tag">Einsatz</span>
+                            <span class="tag">Tierrettung</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">Herbst 2021</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Beförderung & Urkundenübergabe</div>
+                        <div class="eintrag-teaser">Offizielle Beförderung mit Urkundenübergabe durch den Kommandanten</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Im Herbst 2021 fand eine offizielle Beförderungsfeier statt. Der Kommandant überreichte die Ernennungsurkunden im Rahmen einer feierlichen Zeremonie im Freien.</p>
+                        <img src="Bilder/Zeitungen/04_2021/img_004.jpeg" alt="Urkundenübergabe Herbst 2021">
+                        <p class="bildtext">Urkundenübergabe durch den Kommandanten · Herbst 2021</p>
+                        <div class="tags">
+                            <span class="tag">Ehrung</span>
+                            <span class="tag">Beförderung</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">Ende 2021</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Gerätehaus: Umbau und Generalsanierung</div>
+                        <div class="eintrag-teaser">Umfassende Modernisierung der Infrastruktur</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Das Gerätehaus der FF Thalheim wurde einer umfassenden Generalsanierung unterzogen. Der Umbau umfasste eine vollständige Modernisierung der Infrastruktur und verbessert die Arbeitsbedingungen für alle Mitglieder.</p>
+                        <img src="Bilder%20HP/slide3.jpg" alt="Gerätehaus FF Thalheim nach Sanierung">
+                        <p class="bildtext">Gerätehaus der FF Thalheim mit Einsatzfahrzeugen</p>
+                        <div class="tags">
+                            <span class="tag">Infrastruktur</span>
+                            <span class="tag">Umbau</span>
+                            <span class="tag">Gerätehaus</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Historische Fotos -->
+        <div class="historisch">
+            <h3>Historische Aufnahmen</h3>
+            <div class="foto-reihe">
+                <figure>
+                    <img src="Bilder%20HP/Geschichte_Bild1.jpg" alt="Gründungsmitglieder FF Thalheim">
+                    <figcaption>Gründungszeit · um 1883</figcaption>
+                </figure>
+                <figure>
+                    <img src="Bilder%20HP/Mannschaft-1961.jpg" alt="Mannschaft 1961">
+                    <figcaption>Mannschaft · 1961</figcaption>
+                </figure>
+                <figure>
+                    <img src="Bilder%20HP/Geraetehaus1968.jpg" alt="Gerätehaus 1968">
+                    <figcaption>Gerätehaus · 1968</figcaption>
+                </figure>
+                <figure>
+                    <img src="Bilder%20HP/Geraetehaus1985.jpg" alt="Gerätehaus 1985">
+                    <figcaption>Gerätehaus · 1985</figcaption>
+                </figure>
+                <figure>
+                    <img src="Bilder%20HP/slide2.jpg" alt="Gerätehaus aktuell">
+                    <figcaption>Gerätehaus · heute</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div><!-- /y2021 -->
+
+    <!-- ── JAHR 2022 ──────────────────────────────────────── -->
+    <div id="y2022">
+        <div class="year-intro">
+            <h2>Rückblick 2022</h2>
+            <div class="stats-row">
+                <div class="stat"><div class="stat-zahl">46</div><div class="stat-label">Aktive Mitglieder</div></div>
+                <div class="stat"><div class="stat-zahl">21</div><div class="stat-label">Atemschutzträger</div></div>
+                <div class="stat"><div class="stat-zahl">12</div><div class="stat-label">Reservisten</div></div>
+            </div>
+        </div>
+
+        <!-- Q1 -->
+        <div class="quartal-header">
+            <span class="quartal-badge">1. Quartal · Jän – Mär 2022</span>
+            <div class="quartal-linie"></div>
+        </div>
+
+        <div class="zeitstrahl">
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">02. Jän 2022</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Einsatz: BMA Schloss Thalheim</div>
+                        <div class="eintrag-teaser">04:59 Uhr · Fehlalarm · Brandmelder gereinigt · 06:20 Uhr Einsatzbereitschaft</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Um 04:59 Uhr wurden wir zu einem Einsatz im Schloss Thalheim gerufen. Nach dem Auslesen der Brandmeldeanlage wurde der auslösende Brandmelder gefunden und gereinigt — Fehlalarm festgestellt. Um 06:20 Uhr konnte wieder Einsatzbereitschaft gemeldet werden.</p>
+                        <div class="tags">
+                            <span class="tag">Einsatz</span>
+                            <span class="tag">BMA</span>
+                            <span class="tag">Fehlalarm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">24. Jän 2022</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Einsatz: Verkehrsunfall</div>
+                        <div class="eintrag-teaser">08:53 Uhr · Unfallstelle abgesichert · Fahrzeug geborgen · 10:06 Uhr Einsatzbereitschaft</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Um 08:53 Uhr zu einem Verkehrsunfall alarmiert. Die Unfallstelle wurde abgesichert und das Fahrzeug mit Hilfeleistung geborgen. Um 10:06 Uhr wieder Einsatzbereitschaft.</p>
+                        <div class="tags">
+                            <span class="tag">Einsatz</span>
+                            <span class="tag">Verkehrsunfall</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">27. Feb 2022</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Technische Übung: Teich Pönning</div>
+                        <div class="eintrag-teaser">Teich zur bevorstehenden Sanierung ausgepumpt</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Im Zuge einer technischen Übung wurde der Teich in Pönning zur bevorstehenden Sanierung ausgepumpt.</p>
+                        <div class="tags">
+                            <span class="tag">Übung</span>
+                            <span class="tag">Technisch</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">18. Mär 2022</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Jahreshauptversammlung</div>
+                        <div class="eintrag-teaser">COVID-bedingt verschoben · Puxbaum (OLM) · S. Eigner (LM)</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Die aufgrund der COVID-Situation verschobene Jahreshauptversammlung wurde am 18. März unter den geltenden Vorgaben abgehalten. Beförderungen: Stefan Puxbaum zum Oberlöschmeister (OLM), Stefan Eigner zum Löschmeister (LM).</p>
+                        <div class="tags">
+                            <span class="tag">Versammlung</span>
+                            <span class="tag">Beförderung</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── JAHR 2023 ──────────────────────────────────────── -->
+    <div id="y2023">
+        <div class="year-intro">
+            <h2>Rückblick 2023</h2>
+            <p style="color:var(--grau-mid); font-family:Arial,sans-serif; font-size:0.9rem;">Inhalte werden noch ergänzt.</p>
+        </div>
+    </div>
+
+    <!-- ── JAHR 2024 ──────────────────────────────────────── -->
+    <div id="y2024">
+        <div class="year-intro">
+            <h2>Rückblick 2024</h2>
+            <p style="color:var(--grau-mid); font-family:Arial,sans-serif; font-size:0.9rem;">Inhalte werden noch ergänzt.</p>
+        </div>
+    </div>
+
+    <!-- ── JAHR 2025 ──────────────────────────────────────── -->
+    <div id="y2025">
+        <div class="year-intro">
+            <h2>Rückblick 2025</h2>
+            <p style="color:var(--grau-mid); font-family:Arial,sans-serif; font-size:0.9rem;">Inhalte werden noch ergänzt.</p>
+        </div>
+    </div>
+
+    <!-- ── JAHR 2026 ──────────────────────────────────────── -->
+    <div id="y2026">
+        <div class="year-intro">
+            <h2>Aktuell 2026</h2>
+            <p style="color:var(--grau-mid); font-family:Arial,sans-serif; font-size:0.9rem;">Inhalte werden noch ergänzt.</p>
+        </div>
+    </div>
+
+</div><!-- /page -->
+
+<!-- ══ FOOTER ═══════════════════════════════════════════════ -->
+<footer>
+    <strong>Freiwillige Feuerwehr Thalheim</strong> &nbsp;·&nbsp;
+    Vereinschronik &nbsp;·&nbsp; Erstellt 2025
+</footer>
+
+<script>
+    function aufklappen(kopf) {
+        const eintrag = kopf.parentElement;
+        const istOffen = eintrag.classList.contains('offen');
+
+        // Alle schliessen
+        document.querySelectorAll('.eintrag.offen').forEach(function(e) {
+            e.classList.remove('offen');
+        });
+
+        // Angeklickten aufmachen (wenn er zu war)
+        if (!istOffen) {
+            eintrag.classList.add('offen');
+            // Sanft in den sichtbaren Bereich scrollen
+            setTimeout(function() {
+                eintrag.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 50);
+        }
+    }
+
+    // Jahres-Navigation: aktiven Link setzen
+    document.querySelectorAll('.year-nav a').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            document.querySelectorAll('.year-nav a').forEach(function(a) {
+                a.classList.remove('active');
+            });
+            this.classList.add('active');
+        });
+    });
+</script>
+
+</body>
+</html>
