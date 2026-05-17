@@ -303,27 +303,20 @@
 
         /* ── JAHRES-INTRO ────────────────────────────────── */
         .year-intro {
-            background: var(--weiss);
-            border-left: 4px solid var(--jahr-farbe, var(--rot));
+            background: var(--rot-dunkel);
+            border-left: 4px solid rgba(255,255,255,0.22);
             padding: 20px 24px;
             margin: 32px 0 40px;
             border-radius: 0 4px 4px 0;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.22);
+            color: var(--weiss);
         }
 
         .year-intro h2 {
             font-size: 1.4rem;
-            color: var(--jahr-farbe, var(--rot));
+            color: var(--weiss);
             margin-bottom: 12px;
         }
-
-        /* ── JAHRES-FARBEN ───────────────────────────────── */
-        .year-intro.y2021 { --jahr-farbe: #CC0000; background: #FFF5F5; }
-        .year-intro.y2022 { --jahr-farbe: #1D4ED8; background: #EFF6FF; }
-        .year-intro.y2023 { --jahr-farbe: #15803D; background: #F0FDF4; }
-        .year-intro.y2024 { --jahr-farbe: #C2410C; background: #FFF7ED; }
-        .year-intro.y2025 { --jahr-farbe: #7C3AED; background: #F5F3FF; }
-        .year-intro.y2026 { --jahr-farbe: #0891B2; background: #ECFEFF; }
 
         .stats-row {
             display: flex;
@@ -338,13 +331,13 @@
         .stat-zahl {
             font-size: 1.6rem;
             font-weight: 700;
-            color: var(--jahr-farbe, var(--rot));
+            color: var(--weiss);
             line-height: 1;
         }
 
         .stat-label {
             font-size: 0.72rem;
-            color: var(--grau-mid);
+            color: rgba(255,255,255,0.72);
             text-transform: uppercase;
             letter-spacing: 0.08em;
             margin-top: 2px;
@@ -1899,9 +1892,440 @@
     <div id="y2025">
         <div class="year-intro y2025">
             <h2>Rückblick 2025</h2>
-            <p style="color:var(--grau-mid); font-family:Arial,sans-serif; font-size:0.9rem;">Inhalte werden noch ergänzt.</p>
+            <div class="stats-row">
+                <div class="stat"><div class="stat-zahl">46</div><div class="stat-label">Aktive Mitglieder</div></div>
+                <div class="stat"><div class="stat-zahl">27</div><div class="stat-label">Atemschutzträger</div></div>
+                <div class="stat"><div class="stat-zahl">12</div><div class="stat-label">Reservisten</div></div>
+            </div>
         </div>
-    </div>
+
+        <!-- Q1 -->
+        <div class="quartal-header">
+            <span class="quartal-badge">1. Quartal · Jän – Mär 2025</span>
+            <div class="quartal-linie"></div>
+        </div>
+
+        <div class="zeitstrahl">
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">24. Jän 2025</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Mitgliederversammlung – Kommando-Neuwahl &amp; Ehrungen</div>
+                        <div class="eintrag-teaser">Scheriau &amp; Gräll wiedergewählt · 6 Beförderungen · EOBI Eigner Ehrenzeichen 40 Jahre</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 24. Jänner fand die plangemäße Mitgliederversammlung im Gasthaus Nährer in Rassing statt. Unter dem Vorsitz von Bürgermeister Ing. Alois Vogl wurde das Kommando neu gewählt: OBI Ing. Reinhard Scheriau als Kommandant und BI Martin Gräll als Kommandant-Stellvertreter wurden für eine weitere Periode bestätigt. Auch Verwalter Anton Nolz wurde wiederbestellt.</p>
+                        <p>Beförderungen: Jakob Deix → Feuerwehrmann (FM); Patrick Eigner, Simon Kaiblinger und Clemens Rödl → Hauptfeuerwehrmann (HFM); Alexander Nolz → Löschmeister (LM); Anton Puxbaum → Ehrenhauptlöschmeister (EHLM). EOBI Wilhelm Eigner wurde außerdem mit dem Ehrenzeichen für 40 Jahre verdienstvolle Tätigkeit im Feuerwehrwesen ausgezeichnet.</p>
+                        <img src="Bilder/Zeitungen/01_2025/img_001.jpg" alt="Mitgliederversammlung FF Thalheim Jänner 2025">
+                        <p class="bildtext">Mitgliederversammlung 2025 · Gasthaus Nährer, Rassing</p>
+                        <img src="Bilder/Zeitungen/01_2025/img_002.jpeg" alt="Beförderungen und Kommando-Neuwahl MGV 2025">
+                        <p class="bildtext">Beförderungen und Kommando-Neuwahl · Jänner 2025</p>
+                        <div class="tags">
+                            <span class="tag">Versammlung</span>
+                            <span class="tag">Neuwahl</span>
+                            <span class="tag">Beförderung</span>
+                            <span class="tag">Ehrung</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">14. Mär 2025</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">UA-Atemschutzübung Kapelln &amp; neue Atemschutzgeräte</div>
+                        <div class="eintrag-teaser">Unterabschnittsübung Kapelln · neue AS-Geräte ins Einsatzfahrzeug eingebaut</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 14. März wurde in Kapelln die Unterabschnitts-Atemschutzübung abgehalten. Die Kameraden übten das richtige Arbeiten als Atemschutztrupp. Parallel dazu wurden in den ersten Wochen des Jahres die neuen Atemschutzgeräte in das Einsatzfahrzeug eingebaut und erstmals in eine Übung integriert — ein wichtiger Schritt in der Modernisierung der Ausrüstung.</p>
+                        <img src="Bilder/Zeitungen/01_2025/img_003.jpeg" alt="UA-Atemschutzübung Kapelln März 2025">
+                        <p class="bildtext">UA-Atemschutzübung in Kapelln · März 2025</p>
+                        <div class="tags">
+                            <span class="tag">Übung</span>
+                            <span class="tag">Atemschutz</span>
+                            <span class="tag">Ausrüstung</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="quartal-header">
+            <span class="quartal-badge">2. Quartal · Apr – Jun 2025</span>
+            <div class="quartal-linie"></div>
+        </div>
+
+        <div class="zeitstrahl">
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">05. Apr 2025</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">UA-Übung Perschling: Brand EFH mit Vermissten</div>
+                        <div class="eintrag-teaser">Übungsannahme Brand Einfamilienhaus · mehrere vermisste Personen</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 5. April nahmen wir bei der Unterabschnittsübung in Perschling teil. Die Übungsannahme war der Brand eines Einfamilienhauses mit mehreren vermissten Personen — eine realitätsnahe Einsatzsimulation für alle Wehren des Unterabschnitts.</p>
+                        <img src="Bilder/Zeitungen/02_2025/img_001.jpg" alt="UA-Übung Perschling April 2025">
+                        <p class="bildtext">UA-Übung Brand EFH in Perschling · 5. April 2025</p>
+                        <div class="tags">
+                            <span class="tag">Übung</span>
+                            <span class="tag">Unterabschnitt</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">18. Apr 2025</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Zwei runde Geburtstage: Habersatter &amp; Gräll</div>
+                        <div class="eintrag-teaser">LM Lukas Habersatter 30 · BI Martin Gräll 50 · beide Geburtstagsbäume</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 18. April feierten gleich zwei Kameraden runde Geburtstage: Fahrmeister LM Lukas Habersatter seinen dreißigsten und Kommandant-Stellvertreter BI Martin Gräll seinen fünfzigsten Geburtstag. Beiden wurden von der Feuerwehr Geburtstagsbäume aufgestellt. Herzliche Glückwünsche und alles Gute für die Zukunft!</p>
+                        <img src="Bilder/Zeitungen/02_2025/img_002.jpeg" alt="Geburtstagsbaum Habersatter und Gräll April 2025">
+                        <p class="bildtext">Geburtstagsbäume für LM Habersatter und BI Gräll · 18. April 2025</p>
+                        <div class="tags">
+                            <span class="tag">Gemeinschaft</span>
+                            <span class="tag">Feier</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">29. Apr 2025</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Einsatz: Tunneleinsatz Saladorfer Tunnel</div>
+                        <div class="eintrag-teaser">19:16 Uhr · Rauchentwicklung gemeldet · Entwarnung Staubentwicklung Güterzug</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 29. April wurden wir um 19:16 Uhr zu einem Tunneleinsatz in den Saladorfer Tunnel (HL-Bahn) gerufen. Passanten hatten eine starke Rauchentwicklung aus einer Tunnelröhre gemeldet. Kurz nach Abfahrt zum Einsatzort konnte der ÖBB-Notfallkoordinator glücklicherweise Entwarnung geben — es handelte sich nur um eine durch einen Güterzug verursachte Staubentwicklung.</p>
+                        <div class="tags">
+                            <span class="tag">Einsatz</span>
+                            <span class="tag">Tunnel</span>
+                            <span class="tag">HL-Bahn</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">03. Mai 2025</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Florianifeier &amp; Katastrophenschutzmedaille Hochwasser 2024</div>
+                        <div class="eintrag-teaser">Florianimesse Murstetten · Auszeichnung aller Hochwasser-Einsatzkräfte</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 3. Mai feierten wir gemeinsam mit der FF-Murstetten die traditionelle Florianimesse. Im Gasthaus Kahri fand danach die Agape statt. Ein besonderer Moment: Alle Kameradinnen und Kameraden, die beim Hochwasser 2024 im Einsatz waren, wurden mit der „Katastrophenschutzmedaille Hochwasser 2024" ausgezeichnet — eine verdiente Anerkennung für den außergewöhnlichen Einsatz.</p>
+                        <img src="Bilder/Zeitungen/02_2025/img_003.jpeg" alt="Florianifeier Murstetten 2025 – Katastrophenschutzmedaille">
+                        <p class="bildtext">Florianifeier · Verleihung Katastrophenschutzmedaille Hochwasser 2024</p>
+                        <img src="Bilder/Zeitungen/02_2025/img_004.jpeg" alt="Katastrophenschutzmedaille Hochwasser 2024 Verleihung">
+                        <p class="bildtext">Auszeichnung der Hochwasser-Einsatzkräfte · Mai 2025</p>
+                        <div class="tags">
+                            <span class="tag">Gemeinschaft</span>
+                            <span class="tag">Ehrung</span>
+                            <span class="tag">Florianimesse</span>
+                            <span class="tag">Hochwasser</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">10. Jun 2025</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Einsatz: B2 Gebäudebrand Murstetten</div>
+                        <div class="eintrag-teaser">05:11 Uhr · Hackschnitzelbunker · AS-Sammelplatz · Einsatz in stark verrauchten Bereichen</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 10. Juni wurden wir um 05:11 Uhr zu einem B2-Gebäudebrand in Murstetten gerufen. Der Brand brach im Hackschnitzelbunker aus. Unsere Kameraden unterstützten die Nachbarwehren mit Lageerkundung in stark verrauchten Gebäudeteilen, dem Aufbau des Atemschutzsammelplatzes und dem Einsatz eines AS-Trupps zur Räumung des Hackschnitzelbunkers.</p>
+                        <img src="Bilder/Zeitungen/02_2025/img_005.jpeg" alt="B2 Gebäudebrand Murstetten Hackschnitzelbunker 2025">
+                        <p class="bildtext">B2 Gebäudebrand Murstetten · 10. Juni 2025 · 05:11 Uhr</p>
+                        <div class="tags">
+                            <span class="tag">Einsatz</span>
+                            <span class="tag">Brand</span>
+                            <span class="tag">B2</span>
+                            <span class="tag">Atemschutz</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="quartal-header">
+            <span class="quartal-badge">3. Quartal · Jul – Sep 2025</span>
+            <div class="quartal-linie"></div>
+        </div>
+
+        <div class="zeitstrahl">
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">21. Jul 2025</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Einsatz: B2 Fahrzeugbrand – Strohpresse Pönning</div>
+                        <div class="eintrag-teaser">Nachmittag · Strohpresse + Feld entzündet · Wasserversorgung für Löscharbeiten</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 21. Juli wurden wir am Nachmittag zu einem B2-Fahrzeugbrand nach Pönning gerufen. Eine Strohpresse hatte Feuer gefangen und auch das umliegende Feld entzündet. Am Einsatzort waren wir für die Wasserversorgung der Löscharbeiten zuständig.</p>
+                        <img src="Bilder/Zeitungen/03_2025/img_001.jpeg" alt="B2 Strohpresse Brand Pönning Juli 2025">
+                        <p class="bildtext">B2 Fahrzeugbrand – Strohpresse in Pönning · 21. Juli 2025</p>
+                        <div class="tags">
+                            <span class="tag">Einsatz</span>
+                            <span class="tag">Brand</span>
+                            <span class="tag">B2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">23. Jul 2025</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Einsatz: Fahrzeugbergung nach Kollision</div>
+                        <div class="eintrag-teaser">Kreuzung Pönning/Rapoltendorf/Wiesen · zwei Fahrzeuge geborgen</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 23. Juli wurden wir am Nachmittag zu einer Fahrzeugbergung nach einer Kollision zweier Fahrzeuge auf der Kreuzung Pönning/Rapoltendorf/Wiesen gerufen. Wir unterstützten die Nachbarwehren bei der Bergung der beiden Fahrzeuge.</p>
+                        <div class="tags">
+                            <span class="tag">Einsatz</span>
+                            <span class="tag">Bergung</span>
+                            <span class="tag">Technisch</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">Sommer 2025</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Highlight: Tunnelübung Westbahn-Totalsperre</div>
+                        <div class="eintrag-teaser">Stierschweiffeldtunnel · ÖBB Arbeitszug · Einsatzleitung Untermiesting · Bezirksübung</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Das Highlight des Sommers war die Tunnelübung des Bezirks im Zuge der Totalsperre der neuen Westbahn aufgrund von Sanierungsarbeiten nach dem Hochwasser. In enger Zusammenarbeit mit der ÖBB wurde ein Arbeitszug im Stierschweiffeldtunnel abgestellt und eine Einsatzsituation simuliert. Die FF-Thalheim übernahm die Einsatzleitung des Notausstiegs in Untermiesting und die Einrichtung des Atemschutzsammelplatzes.</p>
+                        <img src="Bilder/Zeitungen/03_2025/img_002.jpeg" alt="Tunnelübung Westbahn-Totalsperre Stierschweiffeldtunnel 2025">
+                        <p class="bildtext">Tunnelübung im Stierschweiffeldtunnel · Westbahn-Totalsperre 2025</p>
+                        <img src="Bilder/Zeitungen/03_2025/img_003.jpg" alt="Einsatzleitung Notausstieg Untermiesting 2025">
+                        <p class="bildtext">Einsatzleitung Notausstieg Untermiesting · ÖBB Arbeitszug</p>
+                        <div class="tags">
+                            <span class="tag">Übung</span>
+                            <span class="tag">Tunnel</span>
+                            <span class="tag">ÖBB</span>
+                            <span class="tag">Bezirksübung</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">08.–10. Aug 2025</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">FF-Fest 2025</div>
+                        <div class="eintrag-teaser">Dreitägiges Fest · Partyband „life brothers" am Freitag · zahlreiche Gäste</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Von 8. bis 10. August durfte die FF-Thalheim ihr Feuerwehrfest feiern. Freitagabend sorgte die allseits bekannte Partyband „life brothers" für Stimmung — ein langersehntes Highlight. Herzlicher Dank an alle Gäste, Sponsoren und Biersp­ender. Das nächste Feuerwehrfest findet von 7. bis 9. August 2026 statt.</p>
+                        <img src="Bilder/Zeitungen/03_2025/img_004.jpeg" alt="FF-Fest Thalheim 2025 – life brothers">
+                        <p class="bildtext">FF-Fest Thalheim · 8.–10. August 2025</p>
+                        <img src="Bilder/Zeitungen/03_2025/img_005.jpeg" alt="FF-Fest 2025 Stimmung">
+                        <p class="bildtext">Ausgelassene Stimmung beim Feuerwehrfest 2025</p>
+                        <div class="tags">
+                            <span class="tag">Gemeinschaft</span>
+                            <span class="tag">Fest</span>
+                            <span class="tag">Tradition</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">17. Sep 2025</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">50er Anton Nolz – Leiter des Verwaltungsdienstes</div>
+                        <div class="eintrag-teaser">Geburtstagsbaum · Feier im Kameradenkreis</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 17. September feierte Leiter des Verwaltungsdienstes V Anton Nolz seinen fünfzigsten Geburtstag. Seitens der Feuerwehr wurde ihm ein Geburtstagsbaum aufgestellt und die Kameraden gratulierten herzlich bei seiner Feier.</p>
+                        <img src="Bilder/Zeitungen/03_2025/img_006.jpeg" alt="50. Geburtstag Anton Nolz September 2025">
+                        <p class="bildtext">50. Geburtstag V Anton Nolz · September 2025</p>
+                        <div class="tags">
+                            <span class="tag">Gemeinschaft</span>
+                            <span class="tag">Feier</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="quartal-header">
+            <span class="quartal-badge">4. Quartal · Okt – Dez 2025</span>
+            <div class="quartal-linie"></div>
+        </div>
+
+        <div class="zeitstrahl">
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">19. Okt 2025</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Wandertag der FF-Fest-Helfer</div>
+                        <div class="eintrag-teaser">Wanderung nach Pönning · Wassergarten HFM Kaiblinger · Mittagessen</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 19. Oktober wurden die zahlreichen Helfer des Feuerwehrfestes zum Wandertag eingeladen. Die Wanderung führte vom Feuerwehrhaus nach Pönning zum Betrieb „Wassergarten" von Kamerad HFM Simon Kaiblinger. Nach einer interessanten Führung durch seinen Betrieb wanderten wir zurück und wurden kulinarisch bestens versorgt.</p>
+                        <img src="Bilder/Zeitungen/04_2025/img_001.jpeg" alt="Wandertag Festhelfer Pönning Wassergarten Oktober 2025">
+                        <p class="bildtext">Wandertag der FF-Fest-Helfer · Wassergarten Pönning · Oktober 2025</p>
+                        <div class="tags">
+                            <span class="tag">Gemeinschaft</span>
+                            <span class="tag">Dankeschön</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">31. Okt 2025</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Teambuilding: Brauerei Wieselburg &amp; Bowling Purgstall</div>
+                        <div class="eintrag-teaser">Brauereibesichtigung · Qualitätskontrolle · Bowlingturnier · gemütlicher Ausflug</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 31. Oktober trafen sich die Kameradinnen und Kameraden zu einem gemeinsamen Ausflug. Zunächst besuchten sie die Brauerei Wieselburg, wo spannende Einblicke in die Geschichte des österreichischen Bieres geboten wurden. Nach Besichtigung der Produktionshallen durfte natürlich eine „Qualitätskontrolle" nicht fehlen. Im Bowlingcenter Purgstall fand der Abend mit Abendessen und Bowlingturnier seinen Abschluss.</p>
+                        <img src="Bilder/Zeitungen/04_2025/img_002.jpeg" alt="Teambuilding Brauerei Wieselburg Oktober 2025">
+                        <p class="bildtext">Brauereibesichtigung Wieselburg · 31. Oktober 2025</p>
+                        <img src="Bilder/Zeitungen/04_2025/img_003.jpeg" alt="Bowling Purgstall Teambuilding 2025">
+                        <p class="bildtext">Bowlingturnier in Purgstall</p>
+                        <div class="tags">
+                            <span class="tag">Gemeinschaft</span>
+                            <span class="tag">Teambuilding</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">08. Nov 2025</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">UA-Übung in Thalheim: Brand Landwirtschaft</div>
+                        <div class="eintrag-teaser">~50 Kräfte · 4 Vermisste · Gefahrgutbehälter · 730 m Schläuche · Feedback-Runde</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 8. November fand die zweite Unterabschnittsübung des Jahres bei uns in Thalheim statt. Übungsannahme: Brand in einem landwirtschaftlichen Gebäude mit vier vermissten Personen, Bergung von Geräten und Schutz weiterer Gebäudeteile sowie Entfernung eines Gefahrgutbehälters aus der Gefahrenzone. Rund 50 Kräfte waren im Einsatz, 730 Meter Schläuche wurden ausgelegt. Anschließend gab es eine Feedback-Runde mit den Übungsbeobachtern, bevor die Gemeinden Kapelln und Perschling zu einer Jause einluden.</p>
+                        <img src="Bilder/Zeitungen/04_2025/img_004.jpeg" alt="UA-Übung Thalheim November 2025">
+                        <p class="bildtext">UA-Übung in Thalheim · 8. November 2025 · ~50 Einsatzkräfte</p>
+                        <img src="Bilder/Zeitungen/04_2025/img_005.jpeg" alt="UA-Übung Thalheim Löscheinsatz November 2025">
+                        <p class="bildtext">730 m Schlauchmaterial beim Übungseinsatz</p>
+                        <div class="tags">
+                            <span class="tag">Übung</span>
+                            <span class="tag">Unterabschnitt</span>
+                            <span class="tag">Gefahrgut</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">15. Nov 2025</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Einsatz: BMA Schloss Thalheim</div>
+                        <div class="eintrag-teaser">13:48 Uhr · Rauch offener Kamin · Fehlalarm · 14:22 Uhr Einsatzbereitschaft</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 15. November wurden wir um 13:48 Uhr durch die Gefahrenmeldeanlage zu einem B1-Brandeinsatz ins Schloss Thalheim gerufen. Aufgrund von Rauchentwicklung im Bereich des offenen Kamins hatte die Anlage ausgelöst. Vor Ort konnte der Rauch durch Lüften rasch abziehen. Um 14:22 Uhr konnte wieder eingerückt werden. Fehlalarm.</p>
+                        <div class="tags">
+                            <span class="tag">Einsatz</span>
+                            <span class="tag">BMA</span>
+                            <span class="tag">Fehlalarm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">29. Dez 2025</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Einsatz: BMA Schloss Thalheim</div>
+                        <div class="eintrag-teaser">00:48 Uhr · Saunatür ausgelöst · Fehlalarm · 01:35 Uhr Einsatzbereitschaft</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 29. Dezember wurden wir kurz nach Mitternacht um 00:48 Uhr erneut durch die Gefahrenmeldeanlage ins Schloss Thalheim gerufen. Diesmal hatte eine offene Tür im Saunabereich die Anlage ausgelöst. Nach Überprüfung der Örtlichkeit konnte um 01:35 Uhr wieder eingerückt werden.</p>
+                        <div class="tags">
+                            <span class="tag">Einsatz</span>
+                            <span class="tag">BMA</span>
+                            <span class="tag">Fehlalarm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /y2025 -->
 
     <!-- ── JAHR 2026 ──────────────────────────────────────── -->
     <div id="y2026">
