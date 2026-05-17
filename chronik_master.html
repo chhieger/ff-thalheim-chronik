@@ -304,7 +304,7 @@
         /* ── JAHRES-INTRO ────────────────────────────────── */
         .year-intro {
             background: var(--weiss);
-            border-left: 4px solid var(--rot);
+            border-left: 4px solid var(--jahr-farbe, var(--rot));
             padding: 20px 24px;
             margin: 32px 0 40px;
             border-radius: 0 4px 4px 0;
@@ -313,9 +313,17 @@
 
         .year-intro h2 {
             font-size: 1.4rem;
-            color: var(--rot);
+            color: var(--jahr-farbe, var(--rot));
             margin-bottom: 12px;
         }
+
+        /* ── JAHRES-FARBEN ───────────────────────────────── */
+        .year-intro.y2021 { --jahr-farbe: #CC0000; background: #FFF5F5; }
+        .year-intro.y2022 { --jahr-farbe: #1D4ED8; background: #EFF6FF; }
+        .year-intro.y2023 { --jahr-farbe: #15803D; background: #F0FDF4; }
+        .year-intro.y2024 { --jahr-farbe: #C2410C; background: #FFF7ED; }
+        .year-intro.y2025 { --jahr-farbe: #7C3AED; background: #F5F3FF; }
+        .year-intro.y2026 { --jahr-farbe: #0891B2; background: #ECFEFF; }
 
         .stats-row {
             display: flex;
@@ -330,7 +338,7 @@
         .stat-zahl {
             font-size: 1.6rem;
             font-weight: 700;
-            color: var(--rot);
+            color: var(--jahr-farbe, var(--rot));
             line-height: 1;
         }
 
@@ -735,7 +743,7 @@
 
     <!-- ── JAHR 2021 ──────────────────────────────────────── -->
     <div id="y2021">
-        <div class="year-intro">
+        <div class="year-intro y2021">
             <h2>Rückblick 2021</h2>
             <div class="stats-row">
                 <div class="stat">
@@ -1029,7 +1037,7 @@
 
     <!-- ── JAHR 2022 ──────────────────────────────────────── -->
     <div id="y2022">
-        <div class="year-intro">
+        <div class="year-intro y2022">
             <h2>Rückblick 2022</h2>
             <div class="stats-row">
                 <div class="stat"><div class="stat-zahl">46</div><div class="stat-label">Aktive Mitglieder</div></div>
@@ -1130,7 +1138,7 @@
 
     <!-- ── JAHR 2023 ──────────────────────────────────────── -->
     <div id="y2023">
-        <div class="year-intro">
+        <div class="year-intro y2023">
             <h2>Rückblick 2023</h2>
             <div class="stats-row">
                 <div class="stat"><div class="stat-zahl">45</div><div class="stat-label">Aktive Mitglieder</div></div>
@@ -1525,15 +1533,371 @@
 
     <!-- ── JAHR 2024 ──────────────────────────────────────── -->
     <div id="y2024">
-        <div class="year-intro">
+        <div class="year-intro y2024">
             <h2>Rückblick 2024</h2>
-            <p style="color:var(--grau-mid); font-family:Arial,sans-serif; font-size:0.9rem;">Inhalte werden noch ergänzt.</p>
+            <div class="stats-row">
+                <div class="stat"><div class="stat-zahl">45</div><div class="stat-label">Aktive Mitglieder</div></div>
+                <div class="stat"><div class="stat-zahl">25</div><div class="stat-label">Atemschutzträger</div></div>
+                <div class="stat"><div class="stat-zahl">12</div><div class="stat-label">Reservisten</div></div>
+                <div class="stat"><div class="stat-zahl">5.771</div><div class="stat-label">Einsatz­stunden</div></div>
+            </div>
         </div>
-    </div>
+
+        <!-- Q1 -->
+        <div class="quartal-header">
+            <span class="quartal-badge">1. Quartal · Jän – Mär 2024</span>
+            <div class="quartal-linie"></div>
+        </div>
+
+        <div class="zeitstrahl">
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">26. Jän 2024</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Mitgliederversammlung & Goldene Ehrennadel für EOBI Eigner</div>
+                        <div class="eintrag-teaser">6 Beförderungen · Angelobung Deix · Goldene Ehrennadel der Marktgemeinde</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Im Zuge des Neujahrsempfangs der Marktgemeinde Kapelln wurde EOBI Wilhelm Eigner für seine langjährige Tätigkeit als Kommandant die Goldene Ehrennadel der Marktgemeinde verliehen — eine besondere Würdigung seiner Verdienste.</p>
+                        <p>Am 26. Jänner fand die Mitgliederversammlung im Gasthaus Nährer in Rassing statt. Zahlreiche Beförderungen: Leisser, Rödl und Wandl zum Feuerwehrmann (FM), Nicole Diesmayr und Christina Frech zum Löschmeister (LM), Reinhard Stuphann zum Hauptlöschmeister (HLM) sowie Andrea Tscherny zum Hauptverwaltungsmeister (HVM). Außerdem wurde Kamerad Jakob Deix feierlich angelobt.</p>
+                        <img src="Bilder/Zeitungen/01_2024/img_001.jpg" alt="Mitgliederversammlung FF Thalheim 2024">
+                        <p class="bildtext">Mitgliederversammlung 2024 im Gasthaus Nährer, Rassing</p>
+                        <img src="Bilder/Zeitungen/01_2024/img_002.jpeg" alt="Beförderungen und Angelobung MGV 2024">
+                        <p class="bildtext">Beförderungen und Angelobung bei der MGV 2024</p>
+                        <div class="tags">
+                            <span class="tag">Versammlung</span>
+                            <span class="tag">Beförderung</span>
+                            <span class="tag">Ehrung</span>
+                            <span class="tag">Angelobung</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">19. Feb 2024</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">UA-Winterschulung: Einsätze im Gleisbereich</div>
+                        <div class="eintrag-teaser">Langmannersdorf · ÖBB-Infrastruktur AG · Gefahren und Einsatztaktik Gleisbereich</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 19. Februar fand die Unterabschnitts-Winterschulung in Langmannersdorf statt. Die ÖBB-Infrastruktur AG referierte über Gefahren und die richtige Vorgehensweise bei Einsätzen im und um den Gleisbereich. Das Wissen wurde dabei für alle Kameradinnen und Kameraden des Unterabschnitts aufgefrischt.</p>
+                        <img src="Bilder/Zeitungen/01_2024/img_003.jpeg" alt="UA-Winterschulung ÖBB Gleisbereich 2024">
+                        <p class="bildtext">UA-Winterschulung Gleisbereich · Langmannersdorf · Februar 2024</p>
+                        <div class="tags">
+                            <span class="tag">Schulung</span>
+                            <span class="tag">ÖBB</span>
+                            <span class="tag">Gleisbereich</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">25. Mär 2024</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">UA-Übung: Brand Schloss Thalheim</div>
+                        <div class="eintrag-teaser">72 Kräfte · Technikraum-Brand · 5 Vermisste · 820 m Schläuche</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 25. März fand die erste Unterabschnittsübung des Jahres im Schloss Thalheim statt. Die Übungsannahme: Brand im Technikraum mit Überschlag über die Lüftung ins Hotel — fünf vermisste Personen. 72 Kräfte aus den Wehren des UA3-Perschlingtal waren im Einsatz.</p>
+                        <p>Durch bestens geschulte Handgriffe und feuerwehrübergreifende Zusammenarbeit konnten alle vermissten Personen gerettet und an die Rettung übergeben werden. Die Löschwasserversorgung war mit 820 Metern ausgelegter Schläuche im Eiltempo sichergestellt.</p>
+                        <img src="Bilder/Zeitungen/01_2024/img_004.jpeg" alt="UA-Übung Schloss Thalheim März 2024">
+                        <p class="bildtext">UA-Übung Schloss Thalheim · 25. März 2024 · 72 Einsatzkräfte</p>
+                        <div class="tags">
+                            <span class="tag">Übung</span>
+                            <span class="tag">Unterabschnitt</span>
+                            <span class="tag">Schloss Thalheim</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="quartal-header">
+            <span class="quartal-badge">2. Quartal · Apr – Jun 2024</span>
+            <div class="quartal-linie"></div>
+        </div>
+
+        <div class="zeitstrahl">
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">27. Apr 2024</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Einsatz: B2 Brandeinsatz Weißenkirchen</div>
+                        <div class="eintrag-teaser">23:13 Uhr · Einsatzleitung und AS-Sammelplatz · 23:54 Uhr Einsatzbereitschaft</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am Samstag, den 27. April wurden wir um 23:13 Uhr zu einem B2-Brandeinsatz nach Weißenkirchen gerufen. Die ausgerückten Kameraden unterstützten bei der Einrichtung der Einsatzleitung und des Atemschutzsammelplatzes. Um 23:54 Uhr konnte wieder Einsatzbereitschaft gemeldet werden.</p>
+                        <div class="tags">
+                            <span class="tag">Einsatz</span>
+                            <span class="tag">Brand</span>
+                            <span class="tag">B2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">Mai 2024</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Maibaum, Eröffnung FF-Haus Langmannersdorf &amp; Florianimesse</div>
+                        <div class="eintrag-teaser">Maibaum Kaiblinger · Neubau FF Langmannersdorf · Florianimesse Murstetten</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Zu Ehren der kirchlichen Hochzeit im Vorjahr wurde Kamerad OFM Dipl.-Ing. Simon Kaiblinger traditionell ein Maibaum aufgestellt. Nach der Pflanzung wurden die Kameradinnen und Kameraden zu Speis und Trank eingeladen.</p>
+                        <p>Am 4. Mai waren wir zur feierlichen Eröffnung des neu- und umgebauten Feuerwehrhauses in Langmannersdorf eingeladen. Am 5. Mai feierten wir gemeinsam mit der FF-Murstetten die traditionelle Florianimesse, nach der alle zu einer Agape ins FF-Haus Murstetten eingeladen wurden.</p>
+                        <img src="Bilder/Zeitungen/02_2024/img_001.jpeg" alt="Maibaum Simon Kaiblinger 2024">
+                        <p class="bildtext">Maibaum für Kamerad OFM Simon Kaiblinger · Mai 2024</p>
+                        <img src="Bilder/Zeitungen/02_2024/img_002.jpeg" alt="Eröffnung FF-Haus Langmannersdorf 2024">
+                        <p class="bildtext">Eröffnung Neubau FF-Haus Langmannersdorf · 4. Mai 2024</p>
+                        <img src="Bilder/Zeitungen/02_2024/img_003.jpeg" alt="Florianimesse Murstetten Mai 2024">
+                        <p class="bildtext">Florianimesse in Murstetten · 5. Mai 2024</p>
+                        <div class="tags">
+                            <span class="tag">Gemeinschaft</span>
+                            <span class="tag">Tradition</span>
+                            <span class="tag">Florianimesse</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">Apr–Jun 2024</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Übungen Q2: Atemschutz, Tunnelbegehung &amp; HL-Bahn</div>
+                        <div class="eintrag-teaser">Interne Übungen · Tunnelbegehung Stierschweiffeldtunnel · HL-Bahn Notausstieg</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Im zweiten Quartal wurden mehrere Übungen abgehalten: Atemschutzübungen sowie technische Übungen an den HL-Bahn-Notausstiegen. In den Nachtstunden vom 20. auf den 21. April fand wie jedes Jahr die Begehung des Stierschweiffeldtunnels statt. Kameradinnen und Kameraden besuchten außerdem zahlreiche Schulungen, darunter Ersthelfer-Auffrischungskurse und Führungsausbildungen in Tulln.</p>
+                        <img src="Bilder/Zeitungen/02_2024/img_004.jpeg" alt="Tunnelbegehung Stierschweiffeldtunnel 2024">
+                        <p class="bildtext">Nächtliche Tunnelbegehung Stierschweiffeldtunnel · April 2024</p>
+                        <div class="tags">
+                            <span class="tag">Schulung</span>
+                            <span class="tag">Übung</span>
+                            <span class="tag">HL-Bahn</span>
+                            <span class="tag">Tunnel</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="quartal-header">
+            <span class="quartal-badge">3. Quartal · Jul – Sep 2024</span>
+            <div class="quartal-linie"></div>
+        </div>
+
+        <div class="zeitstrahl">
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">Sommer 2024</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Bewerbe: Bronze 2. Platz &amp; Feuerwehrleistungsabzeichen Silber</div>
+                        <div class="eintrag-teaser">Abschnittsbewerb Inzersdorf · 9 Jungkameraden Silber-Abzeichen in Leobersdorf</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Beim Abschnittsfeuerwehrleistungsbewerb in Inzersdorf erzielten die Kameraden der FF-Thalheim beachtliche Ergebnisse: 3. Platz im Bewerb Bronze ohne Alterspunkte und 2. Platz im Bewerb Bronze mit Alterspunkten. Zu den ersten Gratulanten zählten BFK OBR Georg Schröder und Bgm. Ing. Alois Vogl.</p>
+                        <p>Bei den Landesfeuerwehrleistungsbewerben in Leobersdorf schafften neun Jungkameraden die erforderliche Punktezahl und dürfen sich nun über das Feuerwehrleistungsabzeichen in Silber freuen.</p>
+                        <img src="Bilder/Zeitungen/03_2024/img_001.jpg" alt="Abschnittsbewerb Inzersdorf 2024 – FF Thalheim">
+                        <p class="bildtext">Abschnittsfeuerwehrleistungsbewerb Inzersdorf · Sommer 2024</p>
+                        <img src="Bilder/Zeitungen/03_2024/img_002.jpeg" alt="Feuerwehrleistungsabzeichen Silber – Jungkameraden Leobersdorf 2024">
+                        <p class="bildtext">Feuerwehrleistungsabzeichen Silber · Landesbewerbe Leobersdorf 2024</p>
+                        <div class="tags">
+                            <span class="tag">Bewerb</span>
+                            <span class="tag">Ehrung</span>
+                            <span class="tag">Auszeichnung</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">09.–11. Aug 2024</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">FF-Fest 2024</div>
+                        <div class="eintrag-teaser">Dreitägiges Feuerwehrfest · zahlreiche Gäste · Dankesessen Oktober</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Von 9. bis 11. August durfte die FF Thalheim ihr allseits beliebtes Feuerwehrfest feiern und dabei wieder zahlreiche Gäste begrüßen. Im Oktober folgte das alljährliche Dankesessen für die Fest-Helfer mit Wanderung nach Pönning zum Betrieb „Wassergarten" von Kamerad HFM Simon Kaiblinger.</p>
+                        <img src="Bilder/Zeitungen/03_2024/img_003.jpeg" alt="FF-Fest Thalheim 2024">
+                        <p class="bildtext">FF-Fest Thalheim · 9.–11. August 2024</p>
+                        <img src="Bilder/Zeitungen/03_2024/img_004.jpeg" alt="Stimmung beim FF-Fest 2024">
+                        <p class="bildtext">Gemütliches Beisammensein beim Feuerwehrfest 2024</p>
+                        <div class="tags">
+                            <span class="tag">Gemeinschaft</span>
+                            <span class="tag">Fest</span>
+                            <span class="tag">Tradition</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">04. Sep 2024</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Einsatz: LKW Betriebsmittelaustritt Pönning</div>
+                        <div class="eintrag-teaser">Mittagszeit · Ölbindemittel · Zusammenarbeit mit FF Kapelln</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 4. September wurden wir zur Mittagszeit zu einem technischen Einsatz gerufen. In Pönning kam es bei einem LKW zum Austritt von Betriebsmitteln. Die ausgetretenen Schadstoffe wurden in Zusammenarbeit mit der FF-Kapelln rasch mit Ölbindemittel gebunden. Nach rund einer Stunde war der Einsatz erfolgreich beendet.</p>
+                        <div class="tags">
+                            <span class="tag">Einsatz</span>
+                            <span class="tag">Technisch</span>
+                            <span class="tag">Gefahrgut</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="quartal-header">
+            <span class="quartal-badge">4. Quartal · Okt – Dez 2024</span>
+            <div class="quartal-linie"></div>
+        </div>
+
+        <div class="zeitstrahl">
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">14.–19. Sep 2024</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">HOCHWASSER 2024 — Größter Einsatz der Vereinsgeschichte</div>
+                        <div class="eintrag-teaser">128 Mitglieder · 5 Tage Schichtbetrieb · 1.232 Stunden · gesamtes Gemeindegebiet</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 14. September ab 20:00 Uhr bis zum 19. September 20:00 Uhr waren die Kameradinnen und Kameraden ununterbrochen und im Schichtbetrieb im Einsatz — fünf Tage, die in die Geschichte der FF-Thalheim eingehen werden.</p>
+                        <p>Die Einsätze fanden teilweise an mehreren Orten gleichzeitig statt: Thalheim, Ziegelhausen, Kapelln, Rassing, Rapoltendorf und auch über die Gemeindegrenzen hinaus, etwa in Pottenbrunn. Nur durch zusätzlichen Einsatz von privaten Fahrzeugen, Pumpen und sonstigen Werkzeugen gelang es, die unzähligen Einsätze abzuarbeiten. Einige Kameradinnen und Kameraden waren selbst vom Hochwasser betroffen und stellten sich dennoch in den Dienst der Allgemeinheit.</p>
+                        <img src="Bilder/Zeitungen/04_2024/img_001.jpeg" alt="Hochwasser 2024 – FF Thalheim im Einsatz">
+                        <p class="bildtext">Hochwassereinsatz September 2024 · FF Thalheim</p>
+                        <img src="Bilder/Zeitungen/04_2024/img_002.jpeg" alt="Hochwasser 2024 – Pumpenarbeiten">
+                        <p class="bildtext">Pumpenarbeiten während des Hochwassers</p>
+                        <img src="Bilder/Zeitungen/04_2024/img_003.jpeg" alt="Hochwasser 2024 – Einsatzgebiet">
+                        <p class="bildtext">Überflutetes Einsatzgebiet · September 2024</p>
+                        <img src="Bilder/Zeitungen/04_2024/img_004.jpeg" alt="Hochwasser 2024 – Kameraden im Schichtbetrieb">
+                        <p class="bildtext">Kameraden im 5-tägigen Schichtbetrieb</p>
+                        <img src="Bilder/Zeitungen/04_2024/img_005.jpeg" alt="Hochwasserschäden und Aufräumarbeiten 2024">
+                        <p class="bildtext">Aufräumarbeiten nach dem Hochwasser</p>
+                        <div class="tags">
+                            <span class="tag">Einsatz</span>
+                            <span class="tag">Hochwasser</span>
+                            <span class="tag">Historisch</span>
+                            <span class="tag">5 Tage</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">20. Okt 2024</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Einsatz: Dachstuhlbrand Langmannersdorf</div>
+                        <div class="eintrag-teaser">Vollbrand · Übergreifen auf Nachbarn verhindert · bis ~19:00 Uhr</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am Sonntag, den 20. Oktober wurden wir um 14:50 Uhr zu einem Brandeinsatz nach Langmannersdorf gerufen. Ein Dachstuhl eines Wohnhauses stand im Vollbrand. Die Kameraden konnten in Zusammenarbeit mit den anderen eingesetzten Wehren verhindern, dass der Brand auf Nachbargebäude übergreift. Gegen 19:00 Uhr konnte wieder eingerückt werden.</p>
+                        <img src="Bilder/Zeitungen/04_2024/img_006.jpeg" alt="Dachstuhlbrand Langmannersdorf Oktober 2024">
+                        <p class="bildtext">Dachstuhlbrand Langmannersdorf · 20. Oktober 2024</p>
+                        <div class="tags">
+                            <span class="tag">Einsatz</span>
+                            <span class="tag">Brand</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">Okt–Nov 2024</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Feierlichkeiten: Hochzeit, Geburtstage &amp; Dankesessen</div>
+                        <div class="eintrag-teaser">Hochzeit Martin Eigner · 60er HLM Puxbaum · 40er LM Frech · Dankesessen Festhelfer</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Im Herbst 2024 gab es erfreuliche Ereignisse: Am 27. September feierten wir den 60. Geburtstag von HLM Anton Puxbaum. Am 12. Oktober waren wir zur kirchlichen Hochzeit von Kamerad OFM Martin Eigner und seiner Bettina in Kasten eingeladen — herzliche Glückwünsche an das Brautpaar!</p>
+                        <p>Am 28. Oktober fand das traditionelle Dankesessen für die FF-Fest-Helfer statt — mit Wanderung nach Pönning zum Wassergarten von HFM Simon Kaiblinger. Am 12. November stellten wir Kamerad LM Thomas Frech zum 40. Geburtstag einen Geburtstagsbaum auf.</p>
+                        <img src="Bilder/Zeitungen/04_2024/img_007.jpeg" alt="Hochzeit Martin Eigner 2024">
+                        <p class="bildtext">Hochzeit OFM Martin Eigner &amp; Bettina · Oktober 2024</p>
+                        <div class="tags">
+                            <span class="tag">Gemeinschaft</span>
+                            <span class="tag">Feier</span>
+                            <span class="tag">Ehrung</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eintrag">
+                <div class="eintrag-kopf" onclick="aufklappen(this)">
+                    <div class="eintrag-datum">22. Nov 2024</div>
+                    <div class="eintrag-mitte">
+                        <div class="eintrag-titel">Einsatz: Entlaufene Pferde – Verkehrsabsicherung</div>
+                        <div class="eintrag-teaser">06:59 Uhr · L2283 Thalheim–Perschling · Verkehrswege abgesichert</div>
+                    </div>
+                    <div class="eintrag-toggle">&#9660;</div>
+                </div>
+                <div class="eintrag-body">
+                    <div class="eintrag-inhalt">
+                        <p>Am 22. November wurden wir um 06:59 Uhr zu einem technischen Einsatz gerufen. Im Bereich der L2283 zwischen Thalheim und Perschling mussten aufgrund von entlaufenen Pferden die Verkehrswege abgesichert werden.</p>
+                        <div class="tags">
+                            <span class="tag">Einsatz</span>
+                            <span class="tag">Technisch</span>
+                            <span class="tag">Tierrettung</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /y2024 -->
 
     <!-- ── JAHR 2025 ──────────────────────────────────────── -->
     <div id="y2025">
-        <div class="year-intro">
+        <div class="year-intro y2025">
             <h2>Rückblick 2025</h2>
             <p style="color:var(--grau-mid); font-family:Arial,sans-serif; font-size:0.9rem;">Inhalte werden noch ergänzt.</p>
         </div>
@@ -1541,7 +1905,7 @@
 
     <!-- ── JAHR 2026 ──────────────────────────────────────── -->
     <div id="y2026">
-        <div class="year-intro">
+        <div class="year-intro y2026">
             <h2>Aktuell 2026</h2>
             <p style="color:var(--grau-mid); font-family:Arial,sans-serif; font-size:0.9rem;">Inhalte werden noch ergänzt.</p>
         </div>
